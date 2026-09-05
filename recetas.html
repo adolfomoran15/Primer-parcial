@@ -24,6 +24,65 @@
             </nav>
         </header>
     </div>
+    <main id="contenido-principal">
+        <div id="contenedor-filtros">
+            <section id="filtros">
+                <h2>Filtrar recetas</h2>
+                <div id="filtro-categoria">
+                    <h3>categoria</h3>
+                    <input type="checkbox" id="check-cat-entrada" name="categoria" value="entrada">
+                    <label for="check-cat-entrada">Entrada</label>
+
+                    <input type="checkbox" id="check-cat-principal" name="categoria" value="principal">
+                    <label for="check-cat-principal">Plato principal</label>
+
+                    <input type="checkbox" id="check-cat-postre" name="categoria" value="postre">
+                    <label for="check-cat-postre">Postre</label>
+                </div>
+
+                <div id="filtro-ingrediente">
+                    <h3>ingredientes</h3>
+                    <input type="checkbox" id="check-ing-pollo" name="ingrediente" value="pollo">
+                    <label for="check-ing-pollo">pollo</label>
+
+                    <input type="checkbox" id="check-ing-tomate" name="ingrediente" value="tomate">
+                    <label for="check-ing-tomate">Tomate</label>
+
+                    <input type="checkbox" id="check-ing-queso" name="ingrediente" value="queso">
+                    <label for="check-ing-queso">Queso</label>
+
+                    <input type="checkbox" id="check-ing-arroz" name="ingrediente" value="arroz">
+                    <label for="check-ing-arroz">Arroz</label>
+
+                </div>
+                <div id="filtro-teoria">
+                    <h3>¿Sopa, sandwich o ensalada?</h3>
+
+                    <input type="checkbox" id="check-teoria-sopa" name="teoria" value="sopa">
+                    <label for="check-teoria-sopa">Sopa</label>
+
+                    <input type="checkbox" id="check-teoria-sandwich" name="teoria" value="sandwich">
+                    <label for="check-teoria-sandwich">Sandwich</label>
+
+                    <input type="checkbox" id="check-teoria-ensalada" name="teoria" value="ensalada">
+                    <label for="check-teoria-ensalada">Ensalada</label>
+                </div>
+                <div id="filtro-tiempo">
+                    <label for="select-tiempo">Tiempo de preparacion</label>
+                    <select id="select-tiempo" name="tiempo">
+                        <option value="todos">Todos</option>
+                        <option value="rapido">Menos de 30 min</option>
+                        <option value="medio">Entre 30 y 60 min</option>
+                        <option value="largo">Mas de 60 min</option>
+                    </select>
+                </div>
+
+                <button type="button" id="boton-aplicar-filtros" onclick="aplicarFiltros()">Aplicar filtros</button>
+            </section>
+        </div>
+
+    </main>
+
 
 </body>
 
