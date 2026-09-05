@@ -37,7 +37,37 @@
                 </div>
             </div>
         </section>
-
+        <div id="contenedor-destacadas">
+            <section id="recetas-destacadas">
+                <div id="carrusel-destacadas">
+                    <button type="button" id="boton-flecha-izquierda" onclick="moverCarrusel('izquierda')">‹</button>
+                    <div id="lista-destacadas">
+                        <article class="tarjeta-recta" id="destacada-sopa-calabaza">
+                            <!--IMAGEN  -->
+                            <h3>Sopa de calabaza</h3>
+                            <p>Cremosa, rapida y perfecta para el invierno.</p>
+                            <button type="button" class="boton-ver-receta" onclick="verReceta('sopa-calabaza')">Ver
+                                receta</button>
+                        </article>
+                        <article class="tarjeta-receta" id="destacada-sandwich-milanesa">
+                            <!-- IMAGEN -->
+                            <h3>Sandwich de milanesa</h3>
+                            <p>El clasico de fin de semana, a puro pan y milanesa.</p>
+                            <button type="button" class="boton-ver-receta" onclick="verReceta('sandwich-milanesa')">Ver
+                                receta</button>
+                        </article>
+                        <article class="tarjeta-receta" id="destacada-ensalada-cesar">
+                            <!--IMAGEN  -->
+                            <h3>Ensalada Cesar</h3>
+                            <p>Fresa, liviana y lista en menos de 15 minutos</p>
+                            <button type="button" class="boton-ver-receta" onclick="verReceta('ensalada-cesar')">Ver
+                                receta</button>
+                        </article>
+                    </div>
+                    <button type="button" id="boton-flecha-derecha" onclick="moverCarrusel('derecha')">›</button>
+                </div>
+            </section>
+        </div>
     </main>
 </body>
 
