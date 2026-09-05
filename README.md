@@ -24,9 +24,12 @@ _La teoría culinaria que todavía no resolvimos._
 - HTML5
 - CSS3
 - JavaScript
+
+### Fuentes
+
 - [Google Fonts](https://fonts.google.com/)
 
-### Funcionalidades
+## Funcionalidades
 
 | Funcionalidad             | Descripción                                               |
 | ------------------------- | --------------------------------------------------------- |
