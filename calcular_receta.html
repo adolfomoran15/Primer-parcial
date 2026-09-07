@@ -26,13 +26,13 @@
 
     <main id="contenido-principal">
         <section id="informacion-recetas">
-            <aside id="imagen-receta">
+            <aside class="imagen-receta">
               <!--IMAGEN-->
             </aside>
 
-            <div id="contenedor-texto">
+            <div class="contenedor-texto">
 
-               <span id="etiqueta-plato"><!--TIPO PLATO--></span>
+               <span class="etiqueta-plato"><!--TIPO PLATO--></span>
 
                 <h3>
                     <!--TITULO DEL PLATO-->
@@ -43,12 +43,12 @@
                 
                 <hr>
                 
-                <div id="datos-adicionales">
-                    <div id="dato">
+                <div class="datos-adicionales">
+                    <div class="dato">
                         <h4>TIEMPO</h4>
                         <p><!--TIEMPO ESTIMADO--></p>
                     </div>
-                    <div id="dato">
+                    <div class="dato">
                         <h4>PORCIONES RASA</h4>
                         <p><!--CANTIDAD--></p>
                     </div>
@@ -57,12 +57,12 @@
         </section>
 
         <section id="receta">
-            <aside id="columna-izquierda">
-                <div id="calculadora-porciones">
+            <aside class="columna-izquierda">
+                <div class="calculadora-porciones">
                     <h5>
                         Calcular Porciones
                     </h5>
-                    <div id="controles-calculadora">
+                    <div class="controles-calculadora">
                         <input type="number" value="4" readonly>
                         <button>
                             Calcular
@@ -70,7 +70,7 @@
                     </div>
                 </div>
 
-                <div id="lista-ingredientes">
+                <div class="lista-ingredientes">
                     <h5>
                         Ingredientes
                     </h5>
@@ -81,65 +81,66 @@
                     </ul>
                 </div>
             </aside>
-
-            <main id="columna-derecha">
-                <h5>
-                    Preparacion
-                </h5>
-                <ol id="lista-pasos">
-                    <!--LISTA DE PASOS-->
-                    <!--recodar el estilo para css-->
-                </ol>
-            </main>    
         </section>
-    </main>
-    <hr>
-
-    <div id="otras-recetas">
-        <div id="texto-superior">
+        
+        <section id="columna-derecha">
             <h5>
-                Más Recetas
+                Preparacion
             </h5>
-            <a href="recetas.html" id="ver-todo">Ver todo &rarr;</a>
-        </div>
-        <div id="grid-recetas">
-            <article id="receta-corta">
-                <div id="contenedor-imagen">
-                    <!--Añadir la imagen correspondiente-->
-                </div>
-                <h3>
-                    <!--Nombre receta-->
-                </h3>
-                <p>
-                    <!--tiempo que tarda-->
-                </p>
-            </article>
+            <ol id="lista-pasos">
+                <!--LISTA DE PASOS-->
+                <!--recodar el estilo para css-->
+            </ol>
+        </section>    
+        
+        <hr>
 
-            <article id="receta-corta">
-                <div id="contenedor-imagen">
+        <div id="otras-recetas">
+            <div id="texto-superior">
+                <h5>
+                    Más Recetas
+                </h5>
+                <a href="recetas.html" id="ver-todo">Ver todo &rarr;</a>
+            </div>
+            <div class="grid-recetas">
+                <article class="receta-corta">
+                    <div class="contenedor-imagen">
+                        <!--Añadir la imagen correspondiente-->
+                    </div>
+                    <h3>
+                        <!--Nombre receta-->
+                    </h3>
+                    <p>
+                        <!--tiempo que tarda-->
+                    </p>
+                </article>
+
+                <article class="receta-corta">
+                    <div class="contenedor-imagen">
                     <!--Añadir la imagen correspondiente-->
-                </div>
-                <h3>
-                    <!--Nombre receta-->
-                </h3>
-                <p>
-                    <!--tiempo que tarda-->
-                </p>
-            </article>
+                    </div>
+                    <h3>
+                        <!--Nombre receta-->
+                    </h3>
+                    <p>
+                        <!--tiempo que tarda-->
+                    </p>
+                </article>
                 
-            <article id="receta-corta">
-                <div id="contenedor-imagen">
-                    <!--Añadir la imagen correspondiente-->
-                </div>
-                <h3>
-                    <!--Nombre receta-->
-                </h3>
-                <p>
-                    <!--tiempo que tarda-->
-                </p>
-            </article>
+                <article id="receta-corta">
+                    <div id="contenedor-imagen">
+                        <!--Añadir la imagen correspondiente-->
+                    </div>
+                    <h3>
+                        <!--Nombre receta-->
+                    </h3>
+                    <p>
+                        <!--tiempo que tarda-->
+                    </p>
+                </article>
+            </div>
         </div>
-    </div>
+    </main>
 
      <div id="contenedor-footer">
         <footer id="footer-principal">
