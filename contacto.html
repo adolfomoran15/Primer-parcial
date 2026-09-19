@@ -7,6 +7,7 @@
         content="Recetario web que te ayuda a decidir que cocinar.Cuenta con calculadora de porciones, checklist de ingredientes y distintos filtros">
     <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <title>S.E.S. cocina</title>
 </head> <!-- link a CSS y Javascript  -->
 
@@ -16,9 +17,9 @@
             <!-- Aca va la imagen de incio-->
             <h1>Sandwich, Sopa o ensalada</h1>
             <nav id="nav-principal">
-                <a href="index.html" id="link-inicio" class="link-activo">Inicio</a>
-                <a href="recetas.html" id="link-recetas">Recetas</a>
-                <a href="contacto.html" id="link-contacto">Contacto</a>
+                <a href="index.html" id="hlink-inicio">Inicio</a>
+                <a href="recetas.html" id="hlink-recetas">Recetas</a>
+                <a href="contacto.html" id="hlink-contacto" class="link-activo">Contacto</a>
             </nav>
         </header>
     </div>
@@ -47,7 +48,7 @@
         <hr>
 
         <div class="redes-sociales">
-            <p>Si no, podés encontrarnos en nuestras redes sociales:</p>
+            <p>¡También podés encontrarnos en nuestras redes sociales!</p>
             <article class="instagram">
                 <!--AÑADIR LA IMAGEN DE INSTAGRAM-->
                 <div class="contenedor-texto">
@@ -73,12 +74,20 @@
     <div id="contenedor-footer">
         <footer id="footer-principal">
             <!-- IMAGEN -->
-            <nav id="nav-footer">
-                <a href="index.html">Inicio</a>
-                <a href="recetas.html">Rectas</a>
-                <a href="contacto.html" class="link-activo">Contacto</a>
+            <nav id="nav-texto"> 
+            <h6>S.E.S. cocina</h6>
+            <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
             </nav>
-            <p id="frase-footer">La cocina no discute teorias, las prueba.</p>
+
+            <nav id="nav-sitio">
+                <h6>Sitio</h6>
+                <a href="index.html" id="flink-inicio">Inicio</a>
+                
+                <a href="recetas.html" id="flink-recetas">Recetas</a>
+                
+                <a href="contacto.html" id="flink-contacto" class="link-activo">Contacto</a>
+            </nav>
+            
         </footer>
     </div>
 </body>
