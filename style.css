@@ -24,23 +24,45 @@ header{
         a{
             text-decoration: none;
             font-size: 1rem;
+            position: relative; 
+            padding-bottom: 0.4rem;
+            transition: color 0.3s ease;
 
             &:link, &:visited{ 
                 color:#40413de3;
             }
 
-            &:active, &:focus, &:hover{
-                color: #b91c1c ;
-                border-bottom: 0.1rem solid #b91c1c;
-                padding-bottom: 0.4rem;
+           &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.05rem;
+            background-color: #b91c1c;
+            transform: scaleX(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+            }
+
+            &:hover, &:focus, &:active {
+                color: #b91c1c;
+
+                &::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom;
+                }
             }
         }
-        
-        &:not(:has(a:hover, a:focus, a:active)) a.link-activo{
-                color: #b91c1c ;
-                border-bottom: 0.1rem solid #b91c1c;
-                padding-bottom: 0.4rem;
+
+        &:not(:has(a:hover, a:focus, a:active)) a.link-activo {
+            color: #b91c1c;
+
+            &::after {
+                transform: scaleX(1);
+                transform-origin: bottom;
             }
+        }
     }
 }
 
