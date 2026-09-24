@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Adolfo Moran de la Vega, Franco Torres">
+    <meta name="description"
+        content="Recetario web que te ayuda a decidir que cocinar.Cuenta con calculadora de porciones, checklist de ingredientes y distintos filtros">
+    <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title> <!-- Elegir titulo-->
+</head> <!-- link a CSS y Javascript  -->
+
+<body>
+    <div id="contenedor-header">
+        <header id="header-principal">
+            <img src="imagenes/imagen-header.jpg" alt="Logo de Sopa, Sandwich o Ensalada" id="logo-sitio">
+            <h1>Sandwich, Sopa o ensalada</h1>
+            <nav id="nav-principal">
+                <a href="index.html" id="link-inicio" class="link-activo">Inicio</a>
+                <a href="recetas.html" id="link-recetas">Recetas</a>
+                <a href="contacto.html" id="link-contacto">Contacto</a>
+            </nav>
+        </header>
+    </div>
+    <main id="contenido-principal">
+        <section id="hero">
+            <!-- Falta imagen   -->
+            <div id="texto-hero">
+                <h2>¿Qué cocinamos hoy?</h2>
+                <p>Encontrá la receta perfecta para lo que tenés ganas de comer.</p>
+                <div id="buscador">
+                    <label for="input-buscar-recetas">Buscar recetas</label>
+                    <input type="text" id="input-buscar-recetas" name="buscar-recetas"
+                        placeholder="Ej: milanesa, sopa de calabaza..." size="30" maxlength="40">
+                    <button type="button" id="boton-buscar">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <div id="contenedor-destacadas">
+            <section id="recetas-destacadas">
+                <div id="carrusel-destacadas">
+                    <button type="button" id="boton-flecha-izquierda" onclick="moverCarrusel('izquierda')">‹</button>
+                    <div id="lista-destacadas">
+                        <article class="tarjeta-receta" id="destacada-sopa-calabaza">
+                            <!--IMAGEN  -->
+                            <h3>Sopa de calabaza</h3>
+                            <p>Cremosa, rápida y perfecta para el invierno.</p>
+                            <button type="button" class="boton-ver-receta" onclick="verReceta('sopa-calabaza')">Ver
+                                receta</button>
+                        </article>
+                        <article class="tarjeta-receta" id="destacada-sandwich-milanesa">
+                            <!-- IMAGEN -->
+                            <h3>Sandwich de milanesa</h3>
+                            <p>El clásico de fin de semana, a puro pan y milanesa.</p>
+                            <button type="button" class="boton-ver-receta" onclick="verReceta('sandwich-milanesa')">Ver
+                                receta</button>
+                        </article>
+                        <article class="tarjeta-receta" id="destacada-ensalada-cesar">
+                            <!--IMAGEN  -->
+                            <h3>Ensalada César</h3>
+                            <p>Fresca, liviana y lista en menos de 15 minutos.</p>
+                            <button type="button" class="boton-ver-receta" onclick="verReceta('ensalada-cesar')">Ver
+                                receta</button>
+                        </article>
+                    </div>
+                    <button type="button" id="boton-flecha-derecha" onclick="moverCarrusel('derecha')">›</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="contenedor-footer">
+        <footer id="footer-principal">
+            <!-- IMAGEN -->
+            <nav id="nav-footer">
+                <a href="index.html" class="link-activo">Inicio</a>
+                <a href="recetas.html">Recetas</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
