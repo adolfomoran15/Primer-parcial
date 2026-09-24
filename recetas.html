@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Adolfo Moran de la Vega, Franco Torres">
+    <meta name="description" content="Catalogo de recetas filtrable por categoria,ingredientes y tiempo de preparacion">
+    <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada, filtro de recetas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title> <!--A definir-->
+    <!-- Agregar imagen y CSS-->
+</head>
+
+<body>
+    <div id="contenedor-header">
+        <header id="header-principal">
+            <!-- Imagen-->
+            <h1>Sándwich, Sopa o Ensalada</h1>
+
+            <nav id="nav-principal">
+                <a href="index.html" id="link-inicio">Inicio</a>
+                <a href="recetas.html" id="link-recetas" class="link-activo">Recetas</a>
+                <a href="contacto.html" id="link-contacto">Contacto</a>
+            </nav>
+        </header>
+    </div>
+    <main id="contenido-principal">
+        <div id="contenedor-filtros">
+            <section id="filtros">
+                <h2>Filtrar recetas</h2>
+                <div id="filtro-categoria">
+                    <h3>Categoría</h3>
+                    <input type="checkbox" id="check-cat-entrada" name="categoria" value="entrada">
+                    <label for="check-cat-entrada">Entrada</label>
+
+                    <input type="checkbox" id="check-cat-principal" name="categoria" value="principal">
+                    <label for="check-cat-principal">Plato principal</label>
+
+                    <input type="checkbox" id="check-cat-postre" name="categoria" value="postre">
+                    <label for="check-cat-postre">Postre</label>
+                </div>
+
+                <div id="filtro-ingrediente">
+                    <h3>Ingredientes</h3>
+                    <input type="checkbox" id="check-ing-pollo" name="ingrediente" value="pollo">
+                    <label for="check-ing-pollo">pollo</label>
+
+                    <input type="checkbox" id="check-ing-tomate" name="ingrediente" value="tomate">
+                    <label for="check-ing-tomate">Tomate</label>
+
+                    <input type="checkbox" id="check-ing-queso" name="ingrediente" value="queso">
+                    <label for="check-ing-queso">Queso</label>
+
+                    <input type="checkbox" id="check-ing-arroz" name="ingrediente" value="arroz">
+                    <label for="check-ing-arroz">Arroz</label>
+
+                    <input type="checkbox" id="check-ing-carne" name="ingrediente" value="carne">
+                    <label for="check-ing-carne">Carne</label>
+
+                    <input type="checkbox" id="check-ing-papa" name="ingrediente" value="papa">
+                    <label for="check-ing-papa">Papa</label>
+
+                    <input type="checkbox" id="check-ing-huevo" name="ingrediente" value="huevo">
+                    <label for="check-ing-huevo">Huevo</label>
+
+                    <input type="checkbox" id="check-ing-cebolla" name="ingrediente" value="cebolla">
+                    <label for="check-ing-cebolla">Cebolla</label>
+
+                    <input type="checkbox" id="check-ing-harina" name="ingrediente" value="harina">
+                    <label for="check-ing-harina">Harina</label>
+                </div>
+                <div id="filtro-teoria">
+                    <h3>¿Sopa, sándwich o ensalada?</h3>
+
+                    <input type="checkbox" id="check-teoria-sopa" name="teoria" value="sopa">
+                    <label for="check-teoria-sopa">Sopa</label>
+
+                    <input type="checkbox" id="check-teoria-sandwich" name="teoria" value="sandwich">
+                    <label for="check-teoria-sandwich">Sandwich</label>
+
+                    <input type="checkbox" id="check-teoria-ensalada" name="teoria" value="ensalada">
+                    <label for="check-teoria-ensalada">Ensalada</label>
+                </div>
+                <div id="filtro-tiempo">
+                    <label for="select-tiempo">Tiempo de preparación</label>
+                    <select id="select-tiempo" name="tiempo">
+                        <option value="todos">Todos</option>
+                        <option value="rapido">Menos de 30 min</option>
+                        <option value="medio">Entre 30 y 60 min</option>
+                        <option value="largo">Más de 60 min</option>
+                    </select>
+                </div>
+
+                <button type="button" id="boton-aplicar-filtros" onclick="aplicarFiltros()">Aplicar filtros</button>
+            </section>
+        </div>
+
+        <div id="contenedor-catalogo">
+            <section id="catalogo-recetas">
+                <h2>Todas las recetas</h2>
+                <div id="grilla-recetas">
+                    <article class="tarjeta-receta" id="receta-sopa-calabaza" data-categoria="entrada"
+                        data-tiempo="rapido" data-teoria="sopa">
+                        <!-- Imagen -->
+                        <h3>Sopa de calabaza</h3>
+                        <p>Cremosa, rápida y perfecta para el invierno.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('sopa-calabaza')">Ver
+                            receta</button>
+                    </article>
+                    <article class="tarjeta-receta" id="receta-sandwich-milanesa" data-categoria="principal"
+                        data-tiempo="medio" data-teoria="sandwich">
+                        <!--IMAGEN-->
+                        <h3>Sándwich de milanesa</h3>
+                        <p>El clásico de fin de semana, a puro pan y milanesa.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('sandwich-milanesa')">Ver
+                            receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-ensalada-cesar" data-categoria="entrada"
+                        data-tiempo="rapido" data-teoria="ensalada">
+                        <!--IMAGEN-->
+                        <h3>Ensalada César</h3>
+                        <p>Fresca, liviana y lista en menos de 15 minutos.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('ensalada-cesar')">Ver
+                            receta</button>
+                    </article>
+                    <article class="tarjeta-receta" id="receta-guiso-lentejas" data-categoria="principal"
+                        data-tiempo="largo" data-teoria="sopa">
+                        <!--IMAGEN-->
+                        <h3>Guiso de lentejas</h3>
+                        <p>Casero y abundante, de esos que se cocinan a fuego lento.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('guiso-lentejas')">Ver
+                            receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-torta-chocolate" data-categoria="postre"
+                        data-tiempo="medio" data-teoria="sandwich">
+                        <!--IMAGEN-->
+                        <h3>Torta de chocolate</h3>
+                        <p>Bizcochuelo húmedo con relleno y cobertura de chocolate.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('torta-chocolate')">Ver
+                            receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-chipa" data-categoria="entrada" data-tiempo="medio"
+                        data-teoria="sandwich">
+                        <!--IMAGEN-->
+                        <h3>Chipa</h3>
+                        <p>Pancitos de queso y almidón de mandioca, típicos del litoral.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('chipa')">Ver receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-pollo-horno" data-categoria="principal"
+                        data-tiempo="largo" data-teoria="ensalada">
+                        <!--IMAGEN-->
+                        <h3>Pollo al horno con papas</h3>
+                        <p>Dorado y jugoso, con papas al horno como acompañamiento.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('pollo-horno')">Ver
+                            receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-bife-chorizo" data-categoria="principal"
+                        data-tiempo="medio" data-teoria="ensalada">
+                        <!--IMAGEN-->
+                        <h3>Bife de chorizo a la parrilla</h3>
+                        <p>Un corte clásico, a punto, con su costrita por fuera.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('bife-chorizo')">Ver
+                            receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-provoleta" data-categoria="entrada" data-tiempo="rapido"
+                        data-teoria="sopa">
+                        <!--IMAGEN-->
+                        <h3>Provoleta</h3>
+                        <p>Queso derretido a la parrilla, con orégano y aceite de oliva.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('provoleta')">Ver
+                            receta</button>
+                    </article>
+                    <article class="tarjeta-receta" id="receta-empanadas-carne" data-categoria="entrada"
+                        data-tiempo="largo" data-teoria="sandwich">
+                        <!--IMAGEN-->
+                        <h3>Empanadas de carne</h3>
+                        <p>Repulgo casero, jugosas por dentro y doradas por fuera.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('empanadas-carne')">Ver
+                            receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-locro" data-categoria="principal" data-tiempo="largo"
+                        data-teoria="sopa">
+                        <!--IMAGEN-->
+                        <h3>Locro</h3>
+                        <p>Maíz, zapallo y carne, cocidos a fuego lento por horas.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('locro')">Ver receta</button>
+                    </article>
+
+                    <article class="tarjeta-receta" id="receta-milanesas-pure" data-categoria="principal"
+                        data-tiempo="medio" data-teoria="ensalada">
+                        <!--IMAGEN-->
+                        <h3>Milanesas con puré</h3>
+                        <p>El combo de toda la vida, crocante y cremoso.</p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('milanesas-pure')">Ver
+                            receta</button>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="contenedor-footer">
+        <footer id="footer-principal">
+            <!-- IMAGEN -->
+            <nav id="nav-footer">
+                <a href="index.html">Inicio</a>
+                <a href="recetas.html" class="link-activo">Recetas</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p id="frase-footer">La cocina no discute teorias, las prueba</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
