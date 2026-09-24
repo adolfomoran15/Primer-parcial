@@ -47,21 +47,21 @@
                     <button type="button" id="boton-flecha-izquierda" onclick="moverCarrusel('izquierda')">‹</button>
                     <div id="lista-destacadas">
                         <article class="tarjeta-receta" id="destacada-sopa-calabaza">
-                            <!--IMAGEN  -->
+                            <img src="imagenes/sopa_calabaza.jpg" alt="Sopa de calabaza">
                             <h3>Sopa de calabaza</h3>
                             <p>Cremosa, rápida y perfecta para el invierno.</p>
                             <button type="button" class="boton-ver-receta" onclick="verReceta('sopa-calabaza')">Ver
                                 receta</button>
                         </article>
                         <article class="tarjeta-receta" id="destacada-sandwich-milanesa">
-                            <!-- IMAGEN -->
+                            <img src="imagenes/sandwich_milanesa.jpg" alt="Sándwich de milanesa">
                             <h3>Sandwich de milanesa</h3>
                             <p>El clásico de fin de semana, a puro pan y milanesa.</p>
                             <button type="button" class="boton-ver-receta" onclick="verReceta('sandwich-milanesa')">Ver
                                 receta</button>
                         </article>
                         <article class="tarjeta-receta" id="destacada-ensalada-cesar">
-                            <!--IMAGEN  -->
+                            <img src="imagenes/ensalada.jpg" alt="Ensalada César">
                             <h3>Ensalada César</h3>
                             <p>Fresca, liviana y lista en menos de 15 minutos.</p>
                             <button type="button" class="boton-ver-receta" onclick="verReceta('ensalada-cesar')">Ver
@@ -76,12 +76,16 @@
     <div id="contenedor-footer">
         <footer id="footer-principal">
             <!-- IMAGEN -->
-            <nav id="nav-footer">
-                <a href="index.html" class="link-activo">Inicio</a>
-                <a href="recetas.html">Recetas</a>
-                <a href="contacto.html">Contacto</a>
+            <nav id="nav-texto">
+                <h6>S.E.S. cocina</h6>
+                <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
             </nav>
-            <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
+
+            <nav id="nav-sitio">
+                <a href="index.html" id="flink-inicio" class="link-activo">Inicio</a>
+                <a href="recetas.html" id="flink-recetas">Recetas</a>
+                <a href="contacto.html" id="flink-contacto">Contacto</a>
+            </nav>
         </footer>
     </div>
 </body>

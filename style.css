@@ -92,57 +92,82 @@ header #nav-principal {
     }
 
 
-footer{
+
+footer {
     background-color: var(--color-header);
     color: var(--color-blanco);
     width: 100%;
     box-sizing: border-box;
 
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; 
-    padding: 1.5rem 2rem;
+    justify-content: space-between;
+    align-items: center;
 
-    #nav-texto{
+    padding: 2rem 3rem;
+}
 
-        h6{
-            font-size: 1rem;
-            margin: 0 0 0 0.5rem 0;
-        }
-        p{
-            font-size: 0.8rem;
-            margin: 0;
-        }
-    }
+footer #nav-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
 
-    #nav-sitio{
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
+footer #nav-texto h6 {
+    margin: 0;
+    font-family: var(--fuente-titulos);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
 
-        h6{
-            font-size: 1rem;
-            margin: 0 0 0 0.2rem 0;
-        }
-        
-        a{
-            text-decoration: none;
-            font-size: 0.8rem;
-            width: fit-content;
+footer #nav-texto p {
+    margin: 0;
+    font-size: 0.85rem;
+}
 
-            &:link, &:visited{ 
-                color: var(--color-blanco);
-            }
+footer #nav-sitio {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
 
-            &:active, &:focus, &:hover{
-                color: var(--color-blanco);
-                border-bottom: 0.1rem solid var(--color-blanco);
-                padding-bottom: 0.1rem;
-            }
+footer #nav-sitio h6 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 
-        }
+footer #nav-sitio a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 0.3rem;
+    color: var(--color-blanco);
 
-    }
+    transition: color 0.3s ease;
+}
+
+footer #nav-sitio a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--color-blanco);
+
+    transition: width 0.3s ease;
+}
+
+footer #nav-sitio a:hover,
+footer #nav-sitio a:focus {
+    color: var(--color-secundario);
+}
+
+footer #nav-sitio a:hover::after,
+footer #nav-sitio a:focus::after {
+    width: 100%;
 }
 
 #hero {
@@ -173,4 +198,103 @@ footer{
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.511);
+}
+
+#contenedor-destacadas{
+    width: 100%;
+    padding: 3rem 0;
+}
+#recetas-destacadas{
+    width: 100%;
+    text-align: center;
+}
+#recetas-destacadas h2 {
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#carrusel-destacadas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+#lista-destacadas{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    overflow: hidden;
+}
+.tarjeta-receta{
+ flex: 0 0 calc((100% - 3rem) / 3);
+    background-color: var(--color-blanco);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    text-align: left;
+}
+
+
+.tarjeta-receta img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+.tarjeta-receta h3{
+    font-family: var(--fuente-texto);
+    font-size: 1.6rem;
+    margin: 1.2rem 1.5rem 0.5rem;
+    color: var(--color-texto);
+}
+
+.tarjeta-receta p{
+    margin: 0 1.5rem 1.2rem;
+    line-height: 1.5;
+}
+
+.boton-ver-receta {
+    margin: 0 1.5rem 1.5rem;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-ver-receta:hover {
+    background-color: var(--color-header);
+    transform: translateY(-2px);
+}
+
+#boton-flecha-izquierda,
+#boton-flecha-derecha {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--color-header);
+    color: var(--color-blanco);
+
+    font-size: 1.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#boton-flecha-izquierda:hover,
+#boton-flecha-derecha:hover {
+    background-color: var(--color-principal);
+    transform: scale(1.08);
+
 }
