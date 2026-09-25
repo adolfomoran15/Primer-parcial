@@ -7,6 +7,7 @@
     --color-texto: #263238;
     --color-blanco: #FFFFFF;
     --color-borde: #D8CFC3;
+    --color-boton: rgba(0, 77, 231, 0.76);
 
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-texto: 'Montserrat', sans-serif;
@@ -90,8 +91,34 @@ header #nav-principal {
             }
         }
     }
+header #logo-sitio{
+    margin: 0;
+}
+header #logo-sitio a{
+    display: block;
+}
+header #logo-sitio img{
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    transform: rotate(-4deg);
 
 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header #logo-sitio img:hover{
+    transform: rotate(0deg) scale(1.05);
+}
+
+#titulo-sitio {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--color-blanco);
+}
 
 footer {
     background-color: var(--color-header);
@@ -105,6 +132,7 @@ footer {
 
     padding: 2rem 3rem;
 }
+
 
 footer #nav-texto {
     display: flex;
@@ -230,7 +258,7 @@ footer #nav-sitio a:focus::after {
     overflow: hidden;
 }
 .tarjeta-receta{
- flex: 0 0 calc((100% - 3rem) / 3);
+ flex: 0 0 100%;
     background-color: var(--color-blanco);
     border-radius: 30px;
     overflow: hidden;
@@ -262,14 +290,14 @@ footer #nav-sitio a:focus::after {
     padding: 0.7rem 1.2rem;
     border: none;
     border-radius: 5px;
-    background-color: var(--color-principal);
+    background-color: var(--color-header);
     color: var(--color-blanco);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .boton-ver-receta:hover {
-    background-color: var(--color-header);
+    background-color: var(--color-principal);
     transform: translateY(-2px);
 }
 
