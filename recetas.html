@@ -7,15 +7,28 @@
     <meta name="description" content="Catalogo de recetas filtrable por categoria,ingredientes y tiempo de preparacion">
     <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada, filtro de recetas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title> <!--A definir-->
-    <!-- Agregar imagen y CSS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
+
+    <title>Recetario web S.E.S</title>
 </head>
 
 <body>
     <div id="contenedor-header">
         <header id="header-principal">
-            <!-- Imagen-->
-            <h1>Sándwich, Sopa o Ensalada</h1>
+            <a href="lore.html" id="logo-sitio">
+                <img src="imagenes/logo_header.png" alt="Sándwich, Sopa o Ensalada">
+            </a>
+
+            <h1 id="titulo-sitio">Recetario web S.E.S</h1>
 
             <nav id="nav-principal">
                 <a href="index.html" id="link-inicio">Inicio</a>
@@ -214,8 +227,8 @@
             </nav>
 
             <nav id="nav-sitio">
-                <a href="index.html" id="flink-inicio" class="link-activo">Inicio</a>
-                <a href="recetas.html" id="flink-recetas">Recetas</a>
+                <a href="index.html" id="flink-inicio">Inicio</a>
+                <a href="recetas.html" id="flink-recetas" class="link-activo">Recetas</a>
                 <a href="contacto.html" id="flink-contacto">Contacto</a>
             </nav>
         </footer>
