@@ -99,7 +99,7 @@ header #logo-sitio a{
 }
 header #logo-sitio img{
     width: 100px;
-    height: 60px;
+    height: 100px;
     object-fit: contain;
     display: block;
     transform: rotate(-4deg);
@@ -117,6 +117,7 @@ header #logo-sitio img:hover{
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 0.03em;
+    font-style: oblique;
     color: var(--color-blanco);
 }
 
@@ -228,6 +229,14 @@ footer #nav-sitio a:focus::after {
     background-color: rgba(0, 0, 0, 0.511);
 }
 
+#texto-hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0 0 1rem;
+}
+
 #contenedor-destacadas{
     width: 100%;
     padding: 3rem 0;
@@ -324,5 +333,49 @@ footer #nav-sitio a:focus::after {
 #boton-flecha-derecha:hover {
     background-color: var(--color-principal);
     transform: scale(1.08);
+
+}
+
+
+#buscador{
+display: flex;
+justify-content: center;
+gap: 1rem;
+align-items: center;
+}
+
+#input-buscar-recetas{
+    width: 50%;
+    padding: 0.6rem 0.4rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-texto);
+    font-size: 0.88rem;
+}
+
+#input-buscar-recetas:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+}
+
+#input-buscar-recetas::placeholder{
+    font-style: italic;
+}
+#boton-buscar{
+    background-color: var(--color-header);
+    
+    color: var(--color-blanco);
+    border: 1px solid var(--color-blanco);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--fuente-texto);
+}
+
+#boton-buscar:hover{
+background-color: var(--color-principal);
+transform: translateY(-2px);
+transition: all 0.5s ease;
 
 }
