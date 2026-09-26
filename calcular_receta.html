@@ -64,16 +64,15 @@
             </div>
         </section>
 
-        <section id="receta">
-            <aside class="columna-izquierda">
+        <div id="receta">
+            <div class="columna-izquierda">
                 <div class="calculadora-porciones">
                     <h5>
                         Calcular Porciones
                     </h5>
                     <div class="controles-calculadora">
                         <label for="input-porciones" class="label-calculadora">Calculadora</label>
-                        <input type="number" value="4" id="input-porciones" aria-label="Número base de porciones"
-                            readonly>
+                        <input type="number" value="4" id="input-porciones" aria-label="Número base de porciones">
                         <button type="button" aria-label="Calcular ingredientes para el número de porciones elegido">
                             Calcular
                         </button>
@@ -87,21 +86,21 @@
                     <ul>
                         <!--LISTA DE INGREDIENTES-->
                         <!--para que los ingredientes puedan tener la checkbox-->
-                        <!--tiene que ser con input type checkbox-->
+                        <!--tiene que ser con input type checkbox, no olvidar el label-->
                     </ul>
                 </div>
-            </aside>
-        </section>
+            </div>
 
-        <section id="columna-derecha">
-            <h5>
-                Preparación
-            </h5>
-            <ol class="lista-pasos">
-                <!--LISTA DE PASOS-->
-                <!--recodar el estilo para css-->
-            </ol>
-        </section>
+            <div id="columna-derecha">
+                <h5>
+                    Preparación
+                </h5>
+                <ol class="lista-pasos">
+                    <!--LISTA DE PASOS-->
+                    <!--recodar el estilo para css-->
+                </ol>
+            </div>
+        </div>
 
         <hr>
 

@@ -714,3 +714,21 @@ transition: all 0.5s ease;
         }
     }
 }
+
+#receta {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start; 
+
+    .columna-izquierda {
+        flex: 0 0 35%; 
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .columna-derecha {
+        flex: 1; 
+    }
+}
