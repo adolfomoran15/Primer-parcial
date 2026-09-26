@@ -816,3 +816,48 @@ transition: all 0.5s ease;
         }
     }
 }
+
+.lista-pasos {
+    list-style: none; 
+    counter-reset: paso-counter;
+    padding: 0;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    li {
+        counter-increment: paso-counter;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        padding-left: 3.5rem; 
+        line-height: 1.5;
+        font-size: 1rem;
+
+        &::before {
+            content: counter(paso-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(-15%);
+            font-family: var(--fuente-titulos);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-secundario);
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        
+        &::after {
+            content: "";
+            position: absolute;
+            left: 2.2rem;
+            top: 0.1rem;
+            bottom: 0.1rem;
+            width: 1px;
+            background-color: var(--color-borde);
+        }
+    }
+}
