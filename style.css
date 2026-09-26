@@ -239,7 +239,7 @@ footer #nav-sitio a:focus::after {
 
 #contenedor-destacadas{
     width: 100%;
-    padding: 3rem 0;
+    padding: 5rem 0 3.5rem;
 }
 #recetas-destacadas{
     width: 100%;
@@ -260,25 +260,27 @@ footer #nav-sitio a:focus::after {
     width: 100%;
 }
 #lista-destacadas{
-    width: 70%;
+    width: 53%;
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
     overflow: hidden;
 }
 .tarjeta-receta{
- flex: 0 0 100%;
+ flex: 0 0 300px;
     background-color: var(--color-blanco);
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .tarjeta-receta img {
     width: 100%;
-    height: 280px;
+    height: 243px;
     object-fit: cover;
     display: block;
 }
@@ -303,6 +305,7 @@ footer #nav-sitio a:focus::after {
     color: var(--color-blanco);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: auto;
 }
 
 .boton-ver-receta:hover {
@@ -397,9 +400,11 @@ transition: all 0.5s ease;
 #contenedor-filtros {
     width: 46%;
     padding: 2rem 0rem 2rem 3rem;
+    display: flex;
+    flex-direction: column;
 }
 
-#contenido-principal {
+#contenido-principal.pagina-recetas {
     display: flex;
     align-items: flex-start;
     gap: 3rem;
@@ -418,6 +423,7 @@ transition: all 0.5s ease;
     font-size: 2rem;
     font-weight: 600;
     color: var(--color-texto);
+    text-align: center;
 }
 
 #filtros h3 {
@@ -441,7 +447,7 @@ transition: all 0.5s ease;
     cursor: pointer;
 }
 
-filtro label input [type="checkbox"]{
+#filtros label input[type="checkbox"]{
     margin-right: 0.5rem;
     accent-color: var(--color-header);
 }
@@ -457,6 +463,8 @@ filtro label input [type="checkbox"]{
     font-family: var(--fuente-texto);
     font-size: 0.9rem;
     cursor: pointer;
+    margin: 0 auto;
+    
 }
 
 #select-tiempo:focus {
@@ -464,28 +472,35 @@ filtro label input [type="checkbox"]{
     border-color: var(--color-secundario);
 }
 
-#boton-aplicar-filtros {
-    width: 70%;
-    display: block;
-    margin: 0.3rem auto 0;
-    padding: 0.5rem 0.6rem;
+#botones-filtros {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
 
+#boton-aplicar-filtros,#boton-limpiar-filtros{
+    width: 100%;
+    padding: 0.7rem 1rem;
     border: none;
     border-radius: 7px;
-
-    background-color: var(--color-header);
-    color: var(--color-blanco);
-
     font-family: var(--fuente-texto);
     font-size: 0.9rem;
     font-weight: 600;
-
     cursor: pointer;
-
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    
 }
 
-#boton-aplicar-filtros:hover {
-    background-color: var(--color-principal);
+#boton-aplicar-filtros{
+    background-color: var(--color-header);
+    color: var(--color-blanco);
+}
+#boton-aplicar-filtros:hover,#boton-limpiar-filtros:hover {
     transform: translateY(-2px);
+}
+
+#boton-limpiar-filtros{
+    background-color: rgba(194, 0, 0, 0.922);
+    color: var(--color-blanco);
 }
