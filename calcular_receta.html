@@ -10,35 +10,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Betania+Patmos&family=Erica+One&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" 
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <title>S.E.S. cocina</title>
+    <title>Recetario web S.E.S</title>
 </head> <!-- link a CSS y Javascript  -->
 
 <body>
     <div id="contenedor-header">
         <header id="header-principal">
-            <!-- Aca va la imagen de incio-->
-            <h1>Sandwich, Sopa o ensalada</h1>
+            <a href="lore.html" id="logo-sitio">
+                <img src="imagenes/logo_header.png" alt="Sándwich, Sopa o Ensalada">
+            </a>
+            <h1 id="titulo-sitio">Recetario web S.E.S</h1>
             <nav id="nav-principal">
                 <a href="index.html" id="hlink-inicio">Inicio</a>
-                <a href="recetas.html" id="hlink-recetas">Recetas</a>
+                <a href="recetas.html" id="hlink-recetas" class="link-activo">Recetas</a>
                 <a href="contacto.html" id="hlink-contacto">Contacto</a>
             </nav>
         </header>
     </div>
 
-    <main id="calcular-recetas-principal">
+    <main id="contenido-principal" class="pagina-calcular">
         <section id="informacion-recetas">
             <aside class="imagen-receta">
-              <!--IMAGEN-->
+                <!--IMAGEN-->
             </aside>
 
             <div class="contenedor-texto">
 
-               <span class="etiqueta-plato"><!--TIPO PLATO--></span>
+                <span class="etiqueta-plato"><!--TIPO PLATO--></span>
 
                 <h3>
                     <!--TITULO DEL PLATO-->
@@ -46,9 +48,9 @@
                 <p>
                     <!--parrafo del plato-->
                 </p>
-                
+
                 <hr>
-                
+
                 <div class="datos-adicionales">
                     <div class="dato">
                         <h6>TIEMPO</h6>
@@ -70,13 +72,9 @@
                     </h5>
                     <div class="controles-calculadora">
                         <label for="input-porciones" class="label-calculadora">Calculadora</label>
-                        <input type="number"
-                               value="4"
-                               id="input-porciones"
-                               aria-label="Número base de porciones"
-                               readonly>
-                        <button type="button"
-                                aria-label="Calcular ingredientes para el número de porciones elegido">
+                        <input type="number" value="4" id="input-porciones" aria-label="Número base de porciones"
+                            readonly>
+                        <button type="button" aria-label="Calcular ingredientes para el número de porciones elegido">
                             Calcular
                         </button>
                     </div>
@@ -94,7 +92,7 @@
                 </div>
             </aside>
         </section>
-        
+
         <section id="columna-derecha">
             <h5>
                 Preparación
@@ -103,8 +101,8 @@
                 <!--LISTA DE PASOS-->
                 <!--recodar el estilo para css-->
             </ol>
-        </section>    
-        
+        </section>
+
         <hr>
 
         <div class="otras-recetas">
@@ -129,7 +127,7 @@
 
                 <article class="receta-corta">
                     <div class="contenedor-imagen">
-                    <!--Añadir la imagen correspondiente-->
+                        <!--Añadir la imagen correspondiente-->
                     </div>
                     <h3>
                         <!--Nombre receta-->
@@ -138,7 +136,7 @@
                         <!--tiempo que tarda-->
                     </p>
                 </article>
-                
+
                 <article class="receta-corta">
                     <div class="contenedor-imagen">
                         <!--Añadir la imagen correspondiente-->
@@ -154,23 +152,22 @@
         </div>
     </main>
 
-     <div id="contenedor-footer">
+    <div id="contenedor-footer">
         <footer id="footer-principal">
             <!-- IMAGEN -->
-            <nav id="nav-texto"> 
-            <h6>S.E.S. cocina</h6>
-            <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
+            <nav id="nav-texto">
+                <h6>S.E.S. cocina</h6>
+                <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
             </nav>
 
             <nav id="nav-sitio">
-                <h6>Sitio</h6>
                 <a href="index.html" id="flink-inicio">Inicio</a>
-                
+
                 <a href="recetas.html" id="flink-recetas">Recetas</a>
-                
+
                 <a href="contacto.html" id="flink-contacto">Contacto</a>
             </nav>
-            
+
         </footer>
     </div>
 </body>
