@@ -889,3 +889,51 @@ transition: all 0.5s ease;
         }
     }
 }
+
+.otras-recetas{
+    width: 100%;
+    max-width: 900px;
+    margin: 3rem auto 0 auto;
+    padding: 0 1rem;
+
+    .grid-recetas {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "receta-1 receta-2 receta-3";
+        gap: 1.5rem;
+    
+
+        .receta-corta{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .contenedor-imagen{
+                width: 100%;
+                aspect-ratio: 4/3;
+                overflow: hidden;
+                border-radius: 10px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            h3 {
+                margin: 0;
+                font-family: var(--fuente-titulos);
+                font-size: 1rem;
+                color: var(--color-texto);
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.8rem;
+                color: var(--color-secundario);
+                font-weight: 600;
+            }
+        }
+    }
+}
