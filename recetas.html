@@ -5,83 +5,118 @@
     <meta charset="UTF-8">
     <meta name="author" content="Adolfo Moran de la Vega, Franco Torres">
     <meta name="description" content="Catalogo de recetas filtrable por categoria,ingredientes y tiempo de preparacion">
-    <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada, filtro de recetas">
+    <meta name="keywords" content="recetas, cocina, sopa, sándwich, ensalada, filtro de recetas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.E.S. cocina</title> <!--A definir-->
-    <!-- Agregar imagen y CSS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
+
+    <title>Recetario web S.E.S</title>
 </head>
 
 <body>
     <div id="contenedor-header">
         <header id="header-principal">
-            <!-- Aca va la imagen de incio-->
-            <h1>Sandwich, Sopa o ensalada</h1>
+            <a href="lore.html" id="logo-sitio">
+                <img src="imagenes/logo_header.png" alt="Sándwich, Sopa o Ensalada">
+            </a>
+
+            <h1 id="titulo-sitio">Recetario web S.E.S</h1>
+
             <nav id="nav-principal">
-                <a href="index.html" id="hlink-inicio">Inicio</a>
-                <a href="recetas.html" id="hlink-recetas" class="link-activo">Recetas</a>
-                <a href="contacto.html" id="hlink-contacto">Contacto</a>
+                <a href="index.html" id="link-inicio">Inicio</a>
+                <a href="recetas.html" id="link-recetas" class="link-activo">Recetas</a>
+                <a href="contacto.html" id="link-contacto">Contacto</a>
             </nav>
         </header>
     </div>
-    <main id="contenido-principal">
+    <main id="contenido-principal" class="pagina-recetas">
         <div id="contenedor-filtros">
             <section id="filtros">
                 <h2>Filtrar recetas</h2>
                 <div id="filtro-categoria">
                     <h3>Categoría</h3>
-                    <input type="checkbox" id="check-cat-entrada" name="categoria" value="entrada">
-                    <label for="check-cat-entrada">Entrada</label>
+                    <label>
+                        <input type="checkbox" id="check-cat-entrada" name="categoria" value="entrada">
+                        Entrada
+                    </label>
 
-                    <input type="checkbox" id="check-cat-principal" name="categoria" value="principal">
-                    <label for="check-cat-principal">Plato principal</label>
-
-                    <input type="checkbox" id="check-cat-postre" name="categoria" value="postre">
-                    <label for="check-cat-postre">Postre</label>
+                    <label>
+                        <input type="checkbox" id="check-cat-principal" name="categoria" value="principal">
+                        Plato principal
+                    </label>
+                    <label>
+                        <input type="checkbox" id="check-cat-postre" name="categoria" value="postre">
+                        Postre
+                    </label>
                 </div>
 
                 <div id="filtro-ingrediente">
                     <h3>Ingredientes</h3>
-                    <input type="checkbox" id="check-ing-pollo" name="ingrediente" value="pollo">
-                    <label for="check-ing-pollo">pollo</label>
+                    <label>
+                        <input type="checkbox" id="check-ing-papa" name="ingrediente" value="papa">
+                        Papa
+                    </label>
+                    <label>
+                        <input type="checkbox" id="check-ing-tomate" name="ingrediente" value="tomate">
+                        Tomate
+                    </label>
 
-                    <input type="checkbox" id="check-ing-tomate" name="ingrediente" value="tomate">
-                    <label for="check-ing-tomate">Tomate</label>
+                    <label>
+                        <input type="checkbox" id="check-ing-queso" name="ingrediente" value="queso">
+                        Queso
+                    </label>
 
-                    <input type="checkbox" id="check-ing-queso" name="ingrediente" value="queso">
-                    <label for="check-ing-queso">Queso</label>
+                    <label>
+                        <input type="checkbox" id="check-ing-arroz" name="ingrediente" value="arroz">
+                        Arroz
+                    </label>
 
-                    <input type="checkbox" id="check-ing-arroz" name="ingrediente" value="arroz">
-                    <label for="check-ing-arroz">Arroz</label>
+                    <label>
+                        <input type="checkbox" id="check-ing-carne" name="ingrediente" value="carne">
+                        Carne
+                    </label>
 
-                    <input type="checkbox" id="check-ing-carne" name="ingrediente" value="carne">
-                    <label for="check-ing-carne">Carne</label>
+                    <label>
+                        <input type="checkbox" id="check-ing-huevo" name="ingrediente" value="huevo">
+                        Huevo
+                    </label>
 
-                    <input type="checkbox" id="check-ing-papa" name="ingrediente" value="papa">
-                    <label for="check-ing-papa">Papa</label>
+                    <label>
+                        <input type="checkbox" id="check-ing-cebolla" name="ingrediente" value="cebolla">
+                        Cebolla
+                    </label>
 
-                    <input type="checkbox" id="check-ing-huevo" name="ingrediente" value="huevo">
-                    <label for="check-ing-huevo">Huevo</label>
-
-                    <input type="checkbox" id="check-ing-cebolla" name="ingrediente" value="cebolla">
-                    <label for="check-ing-cebolla">Cebolla</label>
-
-                    <input type="checkbox" id="check-ing-harina" name="ingrediente" value="harina">
-                    <label for="check-ing-harina">Harina</label>
+                    <label>
+                        <input type="checkbox" id="check-ing-harina" name="ingrediente" value="harina">
+                        Harina
+                    </label>
                 </div>
                 <div id="filtro-teoria">
                     <h3>¿Sopa, sándwich o ensalada?</h3>
 
-                    <input type="checkbox" id="check-teoria-sopa" name="teoria" value="sopa">
-                    <label for="check-teoria-sopa">Sopa</label>
-
-                    <input type="checkbox" id="check-teoria-sandwich" name="teoria" value="sandwich">
-                    <label for="check-teoria-sandwich">Sandwich</label>
-
-                    <input type="checkbox" id="check-teoria-ensalada" name="teoria" value="ensalada">
-                    <label for="check-teoria-ensalada">Ensalada</label>
+                    <label>
+                        <input type="checkbox" id="check-teoria-sopa" name="teoria" value="sopa">
+                        Sopa
+                    </label>
+                    <label>
+                        <input type="checkbox" id="check-teoria-sandwich" name="teoria" value="sandwich">
+                        Sándwich
+                    </label>
+                    <label>
+                        <input type="checkbox" id="check-teoria-ensalada" name="teoria" value="ensalada">
+                        Ensalada
+                    </label>
                 </div>
                 <div id="filtro-tiempo">
-                    <label for="select-tiempo">Tiempo de preparación</label>
+                    <label for="select-tiempo" class="titulo-filtro">Tiempo de preparación</label>
                     <select id="select-tiempo" name="tiempo">
                         <option value="todos">Todos</option>
                         <option value="rapido">Menos de 30 min</option>
@@ -89,9 +124,16 @@
                         <option value="largo">Más de 60 min</option>
                     </select>
                 </div>
-
-                <button type="button" id="boton-aplicar-filtros" onclick="aplicarFiltros()">Aplicar filtros</button>
             </section>
+
+            <div id="botones-filtros">
+                <button type="button" id="boton-aplicar-filtros" onclick="aplicarFiltros()">
+                    Aplicar filtros
+                </button>
+                <button type="button" id="boton-limpiar-filtros" onclick="limpiarFiltros()">
+                    Limpiar filtros
+                </button>
+            </div>
         </div>
 
         <div id="contenedor-catalogo">
@@ -207,20 +249,16 @@
     <div id="contenedor-footer">
         <footer id="footer-principal">
             <!-- IMAGEN -->
-            <nav id="nav-texto"> 
-            <h6>S.E.S. cocina</h6>
-            <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
+            <nav id="nav-texto">
+                <h6>S.E.S. cocina</h6>
+                <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
             </nav>
 
             <nav id="nav-sitio">
-                <h6>Sitio</h6>
                 <a href="index.html" id="flink-inicio">Inicio</a>
-                
                 <a href="recetas.html" id="flink-recetas" class="link-activo">Recetas</a>
-                
                 <a href="contacto.html" id="flink-contacto">Contacto</a>
             </nav>
-            
         </footer>
     </div>
 
