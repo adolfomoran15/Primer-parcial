@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Adolfo Moran de la Vega, Franco Torres">
     <meta name="description" content="Catalogo de recetas filtrable por categoria,ingredientes y tiempo de preparacion">
-    <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada, filtro de recetas">
+    <meta name="keywords" content="recetas, cocina, sopa, sándwich, ensalada, filtro de recetas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
             </nav>
         </header>
     </div>
-    <main id="contenido-principal">
+    <main id="contenido-principal" class="pagina-recetas">
         <div id="contenedor-filtros">
             <section id="filtros">
                 <h2>Filtrar recetas</h2>
@@ -85,11 +85,6 @@
                     </label>
 
                     <label>
-                        <input type="checkbox" id="check-ing-papa" name="ingrediente" value="papa">
-                        Papa
-                    </label>
-
-                    <label>
                         <input type="checkbox" id="check-ing-huevo" name="ingrediente" value="huevo">
                         Huevo
                     </label>
@@ -113,7 +108,7 @@
                     </label>
                     <label>
                         <input type="checkbox" id="check-teoria-sandwich" name="teoria" value="sandwich">
-                        Sandwich
+                        Sándwich
                     </label>
                     <label>
                         <input type="checkbox" id="check-teoria-ensalada" name="teoria" value="ensalada">
@@ -130,10 +125,16 @@
                         <option value="largo">Más de 60 min</option>
                     </select>
                 </div>
+            </section>
+
+            <div id="botones-filtros">
                 <button type="button" id="boton-aplicar-filtros" onclick="aplicarFiltros()">
                     Aplicar filtros
                 </button>
-            </section>
+                <button type="button" id="boton-limpiar-filtros" onclick="limpiarFiltros()">
+                    Limpiar filtros
+                </button>
+            </div>
         </div>
 
         <div id="contenedor-catalogo">
