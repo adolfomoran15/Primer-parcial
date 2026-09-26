@@ -732,3 +732,52 @@ transition: all 0.5s ease;
         flex: 1; 
     }
 }
+
+.calculadora-porciones {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 20em;
+    margin: 0 0 1.5rem 1.5rem;
+
+    h5 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-family: var(--fuente-titulos);
+        font-size: 1.2rem;
+        color: var(--color-texto);
+    }
+
+    .controles-calculadora {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        input[type="number"] {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid var(--color-borde);
+            border-radius: 6px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        button {
+            padding: 0.7rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            align-self: center;
+            background-color: var(--color-header);
+            color: var(--color-blanco);
+            font-family: var(--fuente-texto);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: var(--color-principal);
+            }
+        }
+    }
+}
