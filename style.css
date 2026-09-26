@@ -296,7 +296,10 @@ footer #nav-sitio a:focus::after {
     line-height: 1.5;
 }
 
-.boton-ver-receta {
+.boton-ver-receta-destacada {
+    width: 23%;
+    align-self: center;
+    font-family: var(--fuente-texto);
     margin: 0 1.5rem 1.5rem;
     padding: 0.7rem 1.2rem;
     border: none;
@@ -308,7 +311,20 @@ footer #nav-sitio a:focus::after {
     margin-top: auto;
 }
 
-.boton-ver-receta:hover {
+.boton-ver-receta {
+    font-family: var(--fuente-texto);
+    margin: 0 1.5rem 1.5rem;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-header);
+    color: var(--color-blanco);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: auto;
+}
+
+.boton-ver-receta:hover, .boton-ver-receta-destacada:hover {
     background-color: var(--color-principal);
     transform: translateY(-2px);
 }
