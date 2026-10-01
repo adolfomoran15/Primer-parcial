@@ -521,3 +521,448 @@ transition: all 0.5s ease;
     background-color: rgba(194, 0, 0, 0.922);
     color: var(--color-blanco);
 }
+
+/* SECCION REDES SOCIALES */
+.icono-red-social {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.redes-sociales p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-texto);
+}
+    
+.redes-sociales-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+    
+.redes-sociales-items article {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: var(--color-blanco);
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-borde);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* SECCION FORMULARIO DE CONTACTO */
+.contenedor-texto{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-texto);
+    margin: 2rem 0;
+}
+
+.contenedor-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto 2rem;
+    text-align: left;
+    gap: 0.4rem;
+}
+
+.contenedor-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-top: 0.6rem;
+}
+
+/* INPUTS */
+.contenedor-form input[type="text"],
+.contenedor-form input[type="email"] {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    background-color: var(--color-blanco);
+    font-family: var(--fuente-texto);
+    font-size: 0.95rem;
+
+    &:focus {
+        outline: none;
+        border-color: var(--color-secundario);
+    }
+}
+
+.contenedor-form #mensaje {
+        padding-bottom: 3rem;
+}
+
+/* BOTON ENVIAR */
+.contenedor-form #enviar {
+    align-self: center;
+    margin-top: 1rem;
+    padding: 0.7rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-header);
+    color: var(--color-blanco);
+    font-family: var(--fuente-texto);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-principal);
+        transform: translateY(-2px);
+    }
+}
+
+/* SECCION INFORMACION RECETA */
+#informacion-recetas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* IMAGEN(izquierda) */
+#informacion-recetas .imagen-receta {
+    flex: 0 0 40%;
+    max-width: 32rem;
+        
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+/* TEXTO(derecha) */
+#informacion-recetas #texto-receta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.etiqueta-plato {
+    display: inline-block;
+    padding: 0.25rem 0.75rem; 
+    background-color: var(--color-principal); 
+    color: var(--color-blanco); 
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 20px; 
+    text-transform: capitalize; 
+    width: fit-content; 
+}
+
+.etiqueta-plato h3 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto);
+}
+
+.etiqueta-plato p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 420;
+    color: var(--color-texto);
+}
+
+.etiqueta-plato hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid var(--color-borde);
+    margin: 0.8rem 0;
+}
+
+/* MINUTOS Y PORCIONES */
+/* tambien estan uno al lado del otro */
+.datos-adicionales {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3rem; 
+}
+
+.datos-adicionales .dato {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.datos-adicionales .dato h6 {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-principal);
+    letter-spacing: 0.05em;
+}
+
+.datos-adicionales .dato p {
+    align-self: center;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* SECCION PREPARACION */
+#receta {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start; 
+}
+
+#receta .columna-izquierda {
+    flex: 0 0 35%; 
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#receta .columna-derecha {
+    flex: 1; 
+}
+
+/* CALCULADORA PORCIONES */
+/* parte izquierda */
+.calculadora-porciones {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 20em;
+    margin: 0 0 1.5rem 1.5rem; 
+}
+
+.calculadora-porciones h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    color: var(--color-texto);
+}
+
+.calculadora-porciones .controles-calculadora {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.calculadora-porciones .controles-calculadora input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.calculadora-porciones .controles-calculadora button {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    align-self: center;
+    background-color: var(--color-header);
+    color: var(--color-blanco);
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-principal);
+    }
+}
+
+/* LISTA DE INGREDIENTES */
+/* parte izquierda */
+.lista-ingredientes {
+    margin: 0 0 0 1.5rem;   
+}
+
+.lista-ingredientes h5{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    color: var(--color-texto);
+}
+
+.lista-ingredientes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.lista-ingredientes ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+}
+
+.lista-ingredientes ul li input[type="checkbox"] {
+    accent-color: var(--color-principal);
+    width: 0.9rem;
+    height: 0.9rem;
+    cursor: pointer;
+}
+
+/* LISTA DE PASOS */
+/* parte derecha */
+.lista-pasos {
+    list-style: none; 
+    counter-reset: paso-counter;
+    padding: 0;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lista-pasos li {
+    counter-increment: paso-counter; /* contador de pasos */
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 3.5rem; 
+    line-height: 1.5;
+    font-size: 1rem;
+
+    /*numero de paso*/
+    &::before {
+        content: counter(paso-counter);/* incrementar el contador */
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(-15%); /* ajustar la posición del número */
+        font-family: var(--fuente-titulos);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-secundario);
+        width: 1.5rem;
+        text-align: center;
+    }
+    
+    /*separador horizontal*/
+    &::after {
+        content: "";
+        position: absolute;
+        left: 2.2rem;
+        top: 0.1rem;
+        bottom: 0.1rem;
+        width: 1px;
+        background-color: var(--color-borde);
+    }
+}
+
+.separador{/*para que los hr no ocupen todo el ancho*/
+    width: 98%;
+    height: 1px;
+    background-color: var(--color-borde);
+    border: 0;
+    margin: 0.5rem auto;
+}
+
+/*SECCION OTRAS RECETAS*/
+/* texto superior */
+.texto-superior {/* alinearlos horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.texto-superior h5 {
+    margin: 0 0 0 1.5rem;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    color: var(--color-texto);
+}
+
+.texto-superior a {/* referencia a recetas */
+    margin: 0 1.5rem 0 0;
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--color-principal);
+    }
+}
+
+/* mas recetas */
+.otras-recetas{
+    width: 100%;
+    max-width: 70em;
+    margin: 3rem auto 0 auto;
+    padding: 0 1rem;
+}
+
+.otras-recetas .grid-recetas {/*hacer un grid para previzualizar 3 recetas*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "receta-1 receta-2 receta-3";
+    gap: 1.5rem;
+}
+
+.otras-recetas .grid-recetas .receta-corta{/*para cada receta*/
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.otras-recetas .grid-recetas .receta-corta .contenedor-imagen{/*imagen de la receta*/
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 10px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.otras-recetas .grid-recetas .receta-corta h3 {/*titulo de la receta*/
+    margin: 0;
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+.otras-recetas .grid-recetas .receta-corta p {/*minutos que tarda*/
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--color-secundario);
+    font-weight: 600;
+}

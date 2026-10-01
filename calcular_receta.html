@@ -4,39 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Adolfo Moran de la Vega, Franco Torres">
-    <meta name="description" content="Recetario web que te ayuda a decidir que cocinar.
-        Cuenta con calculadora de porciones, checklist de ingredientes y distintos filtros">
+    <meta name="description"
+        content="Calculadora de porciones para las diferentes recetas">
     <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Betania+Patmos&family=Erica+One&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" 
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <title>S.E.S. cocina</title>
+    <title>Recetario web S.E.S</title>
 </head> <!-- link a CSS y Javascript  -->
 
 <body>
     <div id="contenedor-header">
         <header id="header-principal">
-            <!-- Aca va la imagen de incio-->
-            <h1>Sandwich, Sopa o ensalada</h1>
+            <a href="lore.html" id="logo-sitio">
+                <img src="imagenes/logo_header.png" alt="Sándwich, Sopa o Ensalada">
+            </a>
+            <h1 id="titulo-sitio">Recetario web S.E.S</h1>
             <nav id="nav-principal">
                 <a href="index.html" id="hlink-inicio">Inicio</a>
-                <a href="recetas.html" id="hlink-recetas">Recetas</a>
+                <a href="recetas.html" id="hlink-recetas" class="link-activo">Recetas</a>
                 <a href="contacto.html" id="hlink-contacto">Contacto</a>
             </nav>
         </header>
     </div>
 
-    <main id="calcular-recetas-principal">
+    <main id="contenido-principal" class="pagina-calcular">
         <section id="informacion-recetas">
             <aside class="imagen-receta">
                 <!--IMAGEN-->
             </aside>
 
-            <div class="contenedor-texto">
+            <div id="texto-receta">
 
                 <span class="etiqueta-plato"><!--TIPO PLATO--></span>
 
@@ -62,16 +64,15 @@
             </div>
         </section>
 
-        <section id="receta">
-            <aside class="columna-izquierda">
+        <div id="receta">
+            <div class="columna-izquierda">
                 <div class="calculadora-porciones">
                     <h5>
                         Calcular Porciones
                     </h5>
                     <div class="controles-calculadora">
                         <label for="input-porciones" class="label-calculadora">Calculadora</label>
-                        <input type="number" value="4" id="input-porciones" aria-label="Número base de porciones"
-                            readonly>
+                        <input type="number" value="1" id="input-porciones" aria-label="Número base de porciones">
                         <button type="button" aria-label="Calcular ingredientes para el número de porciones elegido">
                             Calcular
                         </button>
@@ -85,23 +86,23 @@
                     <ul>
                         <!--LISTA DE INGREDIENTES-->
                         <!--para que los ingredientes puedan tener la checkbox-->
-                        <!--tiene que ser con input type checkbox-->
+                        <!--tiene que ser con input type checkbox, no olvidar el label-->
                     </ul>
                 </div>
-            </aside>
-        </section>
+            </div>
 
-        <section id="columna-derecha">
-            <h5>
-                Preparación
-            </h5>
-            <ol class="lista-pasos">
-                <!--LISTA DE PASOS-->
-                <!--recodar el estilo para css-->
-            </ol>
-        </section>
+            <div id="columna-derecha">
+                <h5>
+                    Preparación
+                </h5>
+                <ol class="lista-pasos">
+                    <!--LISTA DE PASOS-->
+                    <!--recodar el estilo para css-->
+                </ol>
+            </div>
+        </div>
 
-        <hr>
+        <hr class="separador">
 
         <div class="otras-recetas">
             <div class="texto-superior">
