@@ -8,8 +8,10 @@
         content="Calculadora de porciones para las diferentes recetas">
     <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link 
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" 
         rel="stylesheet">
@@ -17,7 +19,7 @@
     <title>Recetario web S.E.S</title>
 </head> <!-- link a CSS y Javascript  -->
 
-<body>
+<body onload="mostrarReceta();">
     <div id="contenedor-header">
         <header id="header-principal">
             <a href="lore.html" id="logo-sitio">
@@ -34,18 +36,19 @@
 
     <main id="contenido-principal" class="pagina-calcular">
         <section id="informacion-recetas">
-            <aside class="imagen-receta">
+            <aside id="img-receta" class="imagen-receta">
                 <!--IMAGEN-->
+                <!--CORREGIR EL CSS(SE VE PEGADO)-->
             </aside>
 
             <div id="texto-receta">
 
-                <span class="etiqueta-plato"><!--TIPO PLATO--></span>
+                <span id="categoria-receta" class="etiqueta-plato"><!--TIPO PLATO--></span>
 
-                <h3>
+                <h3 id="nombre-plato">
                     <!--TITULO DEL PLATO-->
                 </h3>
-                <p>
+                <p id="descripcion-receta">
                     <!--parrafo del plato-->
                 </p>
 
@@ -54,11 +57,11 @@
                 <div class="datos-adicionales">
                     <div class="dato">
                         <h6>TIEMPO</h6>
-                        <p><!--TIEMPO ESTIMADO--></p>
+                        <p id="tiempo"><!--TIEMPO ESTIMADO--></p>
                     </div>
                     <div class="dato">
                         <h6>CANTIDAD PORCIONES</h6>
-                        <p><!--CANTIDAD--></p>
+                        <p id="cantidad"><!--CANTIDAD--></p>
                     </div>
                 </div>
             </div>
@@ -83,7 +86,7 @@
                     <h5>
                         Ingredientes
                     </h5>
-                    <ul>
+                    <ul id="ingredientes">
                         <!--LISTA DE INGREDIENTES-->
                         <!--para que los ingredientes puedan tener la checkbox-->
                         <!--tiene que ser con input type checkbox, no olvidar el label-->
@@ -95,7 +98,7 @@
                 <h5>
                     Preparación
                 </h5>
-                <ol class="lista-pasos">
+                <ol id="pasos" class="lista-pasos">
                     <!--LISTA DE PASOS-->
                     <!--recodar el estilo para css-->
                 </ol>

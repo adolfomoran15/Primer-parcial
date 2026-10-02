@@ -1,5 +1,6 @@
 const recetas = [
     {
+        id: 'sopa-calabaza',
         nombre: "Sopa de calabaza",
         descripcion: "Cremosa, rápida y perfecta para el invierno.",
         categoria: "Sopas",
@@ -21,6 +22,7 @@ const recetas = [
         ]
     },
     {
+        id: 'sandwich-milanesa',
         nombre: "Sándwich de milanesa",
         descripcion: "El clásico de fin de semana, a puro pan y milanesa.",
         categoria: "Sándwiches",
@@ -41,6 +43,7 @@ const recetas = [
         ]
     },
     {
+        id: 'ensalada-cesar',
         nombre: "Ensalada César",
         descripcion: "Fresca, liviana y lista en menos de 15 minutos.",
         categoria: "Ensaladas",
@@ -61,6 +64,7 @@ const recetas = [
         ]
     },
     {
+        id: 'guiso-lentejas',
         nombre: "Guiso de lentejas",
         descripcion: "Casero y abundante, de esos que se cocinan a fuego lento.",
         categoria: "Guisos",
@@ -85,6 +89,7 @@ const recetas = [
         ]
     },
     {
+        id: 'torta-chocolate',
         nombre: "Torta de chocolate",
         descripcion: "Bizcochuelo húmedo con relleno y cobertura de chocolate.",
         categoria: "Postres",
@@ -109,6 +114,7 @@ const recetas = [
         ]
     },
     {
+        id: 'chipa',
         nombre: "Chipa",
         descripcion: "Pancitos de queso y almidón de mandioca, típicos del litoral.",
         categoria: "Panadería",
@@ -132,6 +138,7 @@ const recetas = [
         ]
     },
     {
+        id: 'pollo-horno',
         nombre: "Pollo al horno con papas",
         descripcion: "Dorado y jugoso, con papas al horno como acompañamiento.",
         categoria: "Platos principales",
@@ -154,6 +161,7 @@ const recetas = [
         ]
     },
     {
+        id: 'bife-chorizo',
         nombre: "Bife de chorizo a la parrilla",
         descripcion: "Un corte clásico, a punto, con su costrita por fuera.",
         categoria: "Parrilla",
@@ -173,6 +181,7 @@ const recetas = [
         ]
     },
     {
+        id: 'provoleta',
         nombre: "Provoleta",
         descripcion: "Queso derretido a la parrilla, con orégano y aceite de oliva.",
         categoria: "Entradas",
@@ -192,6 +201,7 @@ const recetas = [
         ]
     },
     {
+        id: 'empanadas-carne',
         nombre: "Empanadas de carne",
         descripcion: "Repulgo casero, jugosas por dentro y doradas por fuera.",
         categoria: "Empanadas",
@@ -215,6 +225,7 @@ const recetas = [
         ]
     },
     {
+        id: 'locro',
         nombre: "Locro",
         descripcion: "Maíz, zapallo y carne, cocidos a fuego lento por horas.",
         categoria: "Platos tradicionales",
@@ -239,6 +250,7 @@ const recetas = [
         ]
     },
     {
+        id: 'milanesas-pure',
         nombre: "Milanesas con puré",
         descripcion: "El combo de toda la vida, crocante y cremoso.",
         categoria: "Platos principales",
@@ -261,3 +273,70 @@ const recetas = [
         ]
     }
 ];
+
+/**
+ * Mostrar la receta
+ * @method mostrarReceta
+ */
+mostrarReceta = () => {
+    let mostrarIngredientes = "";
+    let mostrarPasos = "";
+    // 1. Obtener toda la cadena de parámetros de la URL actual
+    const queryString = window.location.search;
+
+    // 2. Crear una instancia de URLSearchParams para manipularlo fácilmente
+    const urlParams = new URLSearchParams(queryString);
+
+    // 3. Obtener el valor asociándolo a la clave del parámetro
+    const idReceta = urlParams.get('receta');
+
+    let infoReceta = recetas.find(receta => receta.id === idReceta);
+
+    if(infoReceta === null){
+
+    }else{
+        document.getElementById('img-receta').innerHTML = `<img src="${infoReceta.imagen}" alt="${infoReceta.nombre}" id="imagen-${infoReceta.id}">`;
+
+        document.getElementById('categoria-receta').innerText = infoReceta.categoria;
+
+        document.getElementById('nombre-plato').innerText = infoReceta.nombre;
+
+        document.getElementById('descripcion-receta').innerText = infoReceta.descripcion;
+
+        document.getElementById('tiempo').innerText = `${infoReceta.minutos} minutos`;
+
+        infoReceta.ingredientes.forEach((ingr, num) => {
+            mostrarIngredientes += `
+                            <li aria-label="ingrediente ${infoReceta.ingredientes[num].nombre}">
+                                <label>
+                                    <input type="checkbox" id="ingrediente-${num}">
+                                    <span id="cantidad-ingrediente">${infoReceta.ingredientes[num].cantidad} ${infoReceta.ingredientes[num].unidad}</span>
+                                    <span id="nombre-ingrediente"> ${infoReceta.ingredientes[num].nombre}</span>
+                                </label>
+                            </li>
+                            `
+            });
+
+        document.getElementById('ingredientes').innerHTML = mostrarIngredientes;
+
+        
+        infoReceta.pasos.forEach((paso, num) => {
+            mostrarPasos += `
+                            <li aria-label="paso ${num} ${infoReceta.pasos[num]}}">
+                                ${infoReceta.pasos[num]}
+                            </li>
+                            ` 
+        });
+
+        document.getElementById('pasos').innerHTML = mostrarPasos;
+    }
+}
+
+/**
+ * Redirigir a la pagina de calcular receta
+ * @method verReceta
+ * @param idReceta - nombre de la receta
+ */
+verReceta = (idReceta) => {
+    window.location.href = `calcular_receta.html?receta=${idReceta}`;
+}
