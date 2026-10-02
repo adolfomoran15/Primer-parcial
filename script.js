@@ -367,3 +367,45 @@ mostrarIngredientes = (listIngredientes) => {
 
     document.getElementById('ingredientes').innerHTML = contenido;
 }
+
+/**
+ * Mostrar otras recetas cortas
+ * @method recetasCortas
+ */
+recetasCortas = () => {
+    let contenido = "";
+    const numerosUnicos = new Set();
+
+    while (numerosUnicos.size < 3) {
+        
+        const numero = Math.floor(Math.random() * 12) + 1;
+        numerosUnicos.add(numero);
+    }
+
+    const arrayTemp = Array.from(numerosUnicos);
+
+    const [num1,num2,num3] = arrayTemp;
+
+    let listaRecetas = [recetas.at(num1), recetas.at(num2), recetas.at(num3)];
+
+    listaRecetas.forEach((list, num) => {
+        contenido += `
+                    <article class="receta-corta">
+                        <div class="contenedor-imagen">
+                            <img src="${listaRecetas[num].imagen}" alt="${listaRecetas[num].nombre}" id="imagen-corta-${listaRecetas[num].id}">
+                        </div>
+                        <h3>
+                            ${listaRecetas[num].nombre}
+                        </h3>
+                        <p>
+                            ${listaRecetas[num].minutos} minutos
+                        </p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('${listaRecetas[num].id}')">
+                        Ver receta</button>
+                    </article>
+                    `
+    });
+
+    document.getElementById('recetas-cortas').innerHTML = contenido;
+
+}

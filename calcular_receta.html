@@ -19,7 +19,7 @@
     <title>Recetario web S.E.S</title>
 </head> <!-- link a CSS y Javascript  -->
 
-<body onload="mostrarReceta(), cantidadPorciones();">
+<body onload="mostrarReceta(), cantidadPorciones(), recetasCortas();">
     <div id="contenedor-header">
         <header id="header-principal">
             <a href="lore.html" id="logo-sitio">
@@ -114,42 +114,8 @@
                 </h5>
                 <a href="recetas.html" class="ver-todo">Ver todo &rarr;</a>
             </div>
-            <div class="grid-recetas">
-                <article class="receta-corta">
-                    <div class="contenedor-imagen">
-                        <!--Añadir la imagen correspondiente-->
-                    </div>
-                    <h3>
-                        <!--Nombre receta-->
-                    </h3>
-                    <p>
-                        <!--tiempo que tarda-->
-                    </p>
-                </article>
-
-                <article class="receta-corta">
-                    <div class="contenedor-imagen">
-                        <!--Añadir la imagen correspondiente-->
-                    </div>
-                    <h3>
-                        <!--Nombre receta-->
-                    </h3>
-                    <p>
-                        <!--tiempo que tarda-->
-                    </p>
-                </article>
-
-                <article class="receta-corta">
-                    <div class="contenedor-imagen">
-                        <!--Añadir la imagen correspondiente-->
-                    </div>
-                    <h3>
-                        <!--Nombre receta-->
-                    </h3>
-                    <p>
-                        <!--tiempo que tarda-->
-                    </p>
-                </article>
+            <div id="recetas-cortas" class="grid-recetas">
+                <!--CARGADO DINAMICO-->
             </div>
         </div>
     </main>
