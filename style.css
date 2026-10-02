@@ -644,6 +644,7 @@ transition: all 0.5s ease;
 #informacion-recetas .imagen-receta {
     flex: 0 0 40%;
     max-width: 32rem;
+    margin: 1rem 0 0 1rem;
         
     img {
         width: 100%;
@@ -965,4 +966,19 @@ transition: all 0.5s ease;
     font-size: 0.8rem;
     color: var(--color-secundario);
     font-weight: 600;
+}
+
+/* INSERCION DINAMICA */
+#cantidad-ingrediente{
+    display: inline;
+    color: var(--color-principal);
+    font-size: 0.8rem;
+    font-weight: 550;
+}
+
+/* INSERCION DINAMICA */
+#nombre-ingrediente{
+    display: inline;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
