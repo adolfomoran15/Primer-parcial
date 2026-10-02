@@ -292,7 +292,15 @@ mostrarReceta = () => {
     let infoReceta = recetas.find(receta => receta.id === idReceta);
 
     if(infoReceta == null){
+        document.getElementById('img-receta').innerHTML = `<img src="imagenes/pregunta.png" alt="signo de pregunta" id="imagen-pregunta">`;
 
+        document.getElementById('categoria-receta').innerText = "Sin categoria";
+
+        document.getElementById('nombre-plato').innerText = "Sin plato";
+
+        document.getElementById('descripcion-receta').innerText = "Sin descripción";
+
+        document.getElementById('tiempo').innerText = "No hay minutos";
     }else{
         document.getElementById('img-receta').innerHTML = `<img src="${infoReceta.imagen}" alt="${infoReceta.nombre}" id="imagen-${infoReceta.id}">`;
 
