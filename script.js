@@ -344,19 +344,21 @@ cantidadPorciones = () =>{
 }
 
 /**
- * Mostrar los ingredientes
+ * Mostrar los ingredientes teniendo en cuenta la cantidad de porciones que ingresa el usuario
  * @method mostrarIngredientes
  * @param listIngredientes - lista de los ingredientes de una receta
  */
 mostrarIngredientes = (listIngredientes) => {
     let contenido = "";
+    let cantidad = document.getElementById('input-porciones').value;
     listIngredientes.forEach((ingr, num) => {
+        let total = cantidad * parseFloat(listIngredientes[num].cantidad);
         contenido += 
                             `
                             <li aria-label="ingrediente ${listIngredientes[num].nombre}">
                                 <label>
                                     <input type="checkbox" id="ingrediente-${num}">
-                                    <span id="cantidad-ingrediente">${listIngredientes[num].cantidad} ${listIngredientes[num].unidad}</span>
+                                    <span id="cantidad-ingrediente">${total} ${listIngredientes[num].unidad}</span>
                                     <span id="nombre-ingrediente"> ${listIngredientes[num].nombre}</span>
                                 </label>
                             </li>
