@@ -275,7 +275,7 @@ const recetas = [
 ];
 
 /**
- * Mostrar la receta
+ * Mostrar la receta en la pagina calcular-receta
  * @method mostrarReceta
  */
 mostrarReceta = () => {
@@ -339,4 +339,12 @@ mostrarReceta = () => {
  */
 verReceta = (idReceta) => {
     window.location.href = `calcular_receta.html?receta=${idReceta}`;
+}
+
+/**
+ * Mostrar la cantidad de porciones que se estan calculando
+ * @method cantidadPorciones
+ */
+cantidadPorciones = () =>{
+    document.getElementById('cantidad').innerText = document.getElementById('input-porciones').value;
 }
