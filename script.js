@@ -128,7 +128,7 @@ const recetas = [
             { nombre: "Polvo de hornear", cantidad: 0.25, unidad: "cucharadita" }
         ],
         minutos: 30,
-        imagen: "imagenes/Chipa.jpg",
+        imagen: "imagenes/chipa.png",
         pasos: [
             "En un bol, integrar la fécula de mandioca, los quesos rallados/picados y el polvo de hornear.",
             "Hacer un hueco en el centro y colocar la manteca blanda, el medio huevo batido y un chorrito de leche.",
@@ -279,8 +279,7 @@ const recetas = [
  * @method mostrarReceta
  */
 mostrarReceta = () => {
-    let mostrarIngredientes = "";
-    let mostrarPasos = "";
+    let contenidoPasos = "";
     // 1. Obtener toda la cadena de parámetros de la URL actual
     const queryString = window.location.search;
 
@@ -292,7 +291,7 @@ mostrarReceta = () => {
 
     let infoReceta = recetas.find(receta => receta.id === idReceta);
 
-    if(infoReceta === null){
+    if(infoReceta == null){
 
     }else{
         document.getElementById('img-receta').innerHTML = `<img src="${infoReceta.imagen}" alt="${infoReceta.nombre}" id="imagen-${infoReceta.id}">`;
@@ -305,30 +304,17 @@ mostrarReceta = () => {
 
         document.getElementById('tiempo').innerText = `${infoReceta.minutos} minutos`;
 
-        infoReceta.ingredientes.forEach((ingr, num) => {
-            mostrarIngredientes += `
-                            <li aria-label="ingrediente ${infoReceta.ingredientes[num].nombre}">
-                                <label>
-                                    <input type="checkbox" id="ingrediente-${num}">
-                                    <span id="cantidad-ingrediente">${infoReceta.ingredientes[num].cantidad} ${infoReceta.ingredientes[num].unidad}</span>
-                                    <span id="nombre-ingrediente"> ${infoReceta.ingredientes[num].nombre}</span>
-                                </label>
-                            </li>
-                            `
-            });
-
-        document.getElementById('ingredientes').innerHTML = mostrarIngredientes;
-
+        mostrarIngredientes(infoReceta.ingredientes);
         
         infoReceta.pasos.forEach((paso, num) => {
-            mostrarPasos += `
+            contenidoPasos += `
                             <li aria-label="paso ${num} ${infoReceta.pasos[num]}}">
                                 ${infoReceta.pasos[num]}
                             </li>
                             ` 
         });
 
-        document.getElementById('pasos').innerHTML = mostrarPasos;
+        document.getElementById('pasos').innerHTML = contenidoPasos;
     }
 }
 
@@ -347,4 +333,27 @@ verReceta = (idReceta) => {
  */
 cantidadPorciones = () =>{
     document.getElementById('cantidad').innerText = document.getElementById('input-porciones').value;
+}
+
+/**
+ * Mostrar los ingredientes
+ * @method mostrarIngredientes
+ * @param listIngredientes - lista de los ingredientes de una receta
+ */
+mostrarIngredientes = (listIngredientes) => {
+    let contenido = "";
+    listIngredientes.forEach((ingr, num) => {
+        contenido += 
+                            `
+                            <li aria-label="ingrediente ${listIngredientes[num].nombre}">
+                                <label>
+                                    <input type="checkbox" id="ingrediente-${num}">
+                                    <span id="cantidad-ingrediente">${listIngredientes[num].cantidad} ${listIngredientes[num].unidad}</span>
+                                    <span id="nombre-ingrediente"> ${listIngredientes[num].nombre}</span>
+                                </label>
+                            </li>
+                            `
+        });
+
+    document.getElementById('ingredientes').innerHTML = contenido;
 }
