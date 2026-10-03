@@ -352,7 +352,12 @@ mostrarIngredientes = (listIngredientes) => {
     let contenido = "";
     let cantidad = document.getElementById('input-porciones').value;
     listIngredientes.forEach((ingr, num) => {
-        let total = cantidad * parseFloat(listIngredientes[num].cantidad);
+        let total = Math.round(cantidad * parseFloat(listIngredientes[num].cantidad) * 100) / 100;
+        
+        if(isNaN(total)){
+            total = "a gusto"
+        };
+
         contenido += 
                             `
                             <li aria-label="ingrediente ${listIngredientes[num].nombre}">
