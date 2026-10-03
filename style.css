@@ -405,9 +405,13 @@ transition: all 0.5s ease;
 
 }
 
+#contenedor-catalogo {
+    flex: 1;
+    padding: 2rem 3rem 2rem 0;
+}
 
 #grilla-recetas{
-    width: 95%;
+    
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 1.5rem;
