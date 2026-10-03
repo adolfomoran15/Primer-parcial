@@ -5,11 +5,11 @@ const recetas = [
         descripcion: "Cremosa, rápida y perfecta para el invierno.",
         categoria: "Sopa",
         ingredientes: [
-            { nombre: "Calabaza", cantidad: 150, unidad: "g" },
-            { nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Caldo de verduras", cantidad: 150, unidad: "ml" },
-            { nombre: "Crema de leche", cantidad: 30, unidad: "ml" },
-            { nombre: "Sal y pimienta", cantidad: "a gusto", unidad: "" }
+            { tipoIngrediente: 'calabaza', nombre: "Calabaza", cantidad: 150, unidad: "g" },
+            { tipoIngrediente: 'cebolla', nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'caldo', nombre: "Caldo de verduras", cantidad: 150, unidad: "ml" },
+            { tipoIngrediente: 'crema', nombre: "Crema de leche", cantidad: 30, unidad: "ml" },
+            { tipoIngrediente: 'sal', nombre: "Sal y pimienta", cantidad: "a gusto", unidad: "" }
         ],
         minutos: 20,
         imagen: "imagenes/Sopa-Calabaza.jpg",
@@ -28,11 +28,11 @@ const recetas = [
         descripcion: "El clásico de fin de semana, a puro pan y milanesa.",
         categoria: "Sándwich",
         ingredientes: [
-            { nombre: "Milanesa de carne cocida", cantidad: 1, unidad: "unidad" },
-            { nombre: "Pan francés o baguette", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Tomate", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Hojas de lechuga", cantidad: 2, unidad: "hojas" },
-            { nombre: "Mayonesa", cantidad: 1, unidad: "cucharada" }
+            { tipoIngrediente: 'milanesa', nombre: "Milanesa de carne cocida", cantidad: 1, unidad: "unidad" },
+            { tipoIngrediente: 'pan', nombre: "Pan francés o baguette", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'tomate', nombre: "Tomate", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'lechuga', nombre: "Hojas de lechuga", cantidad: 2, unidad: "hojas" },
+            { tipoIngrediente: 'mayonesa', nombre: "Mayonesa", cantidad: 1, unidad: "cucharada" }
         ],
         minutos: 15,
         imagen: "imagenes/Sandwitc-Milanesa.jpg",
@@ -50,11 +50,11 @@ const recetas = [
         descripcion: "Fresca, liviana y lista en menos de 15 minutos.",
         categoria: "Ensalada",
         ingredientes: [
-            { nombre: "Lechuga romana", cantidad: 0.25, unidad: "planta" },
-            { nombre: "Pechuga de pollo a la plancha", cantidad: 100, unidad: "g" },
-            { nombre: "Crutones de pan", cantidad: 25, unidad: "g" },
-            { nombre: "Queso parmesano rallado", cantidad: 20, unidad: "g" },
-            { nombre: "Aderezo César", cantidad: 1.5, unidad: "cucharadas" }
+            { tipoIngrediente: 'lechuga', nombre: "Lechuga romana", cantidad: 0.25, unidad: "planta" },
+            { tipoIngrediente: 'pollo', nombre: "Pechuga de pollo a la plancha", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'crutones', nombre: "Crutones de pan", cantidad: 25, unidad: "g" },
+            { tipoIngrediente: 'queso', nombre: "Queso parmesano rallado", cantidad: 20, unidad: "g" },
+            { tipoIngrediente: 'aderezo', nombre: "Aderezo César", cantidad: 1.5, unidad: "cucharadas" }
         ],
         minutos: 15,
         imagen: "imagenes/Ensalada-Cesar.jpg",
@@ -72,13 +72,13 @@ const recetas = [
         descripcion: "Casero y abundante, de esos que se cocinan a fuego lento.",
         categoria: "Sopa",
         ingredientes: [
-            { nombre: "Lentejas hidratadas", cantidad: 100, unidad: "g" },
-            { nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Roast beef o panceta", cantidad: 60, unidad: "g" },
-            { nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Papa", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Puré de tomate", cantidad: 75, unidad: "ml" },
-            { nombre: "Caldo de carne", cantidad: 200, unidad: "ml" }
+            { tipoIngrediente: 'lentejas', nombre: "Lentejas hidratadas", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'chorizo', nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'carne', nombre: "Roast beef o panceta", cantidad: 60, unidad: "g" },
+            { tipoIngrediente: 'cebolla', nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'papa', nombre: "Papa", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'pure', nombre: "Puré de tomate", cantidad: 75, unidad: "ml" },
+            { tipoIngrediente: 'caldo', nombre: "Caldo de carne", cantidad: 200, unidad: "ml" }
         ],
         minutos: 60,
         imagen: "imagenes/Guiso-Lentejas.jpg",
@@ -98,13 +98,13 @@ const recetas = [
         descripcion: "Bizcochuelo húmedo con relleno y cobertura de chocolate.",
         categoria: "Sándwich",
         ingredientes: [
-            { nombre: "Harina 0000", cantidad: 60, unidad: "g" },
-            { nombre: "Cacao amargo en polvo", cantidad: 20, unidad: "g" },
-            { nombre: "Azúcar", cantidad: 50, unidad: "g" },
-            { nombre: "Huevo", cantidad: 1, unidad: "unidad" },
-            { nombre: "Leche", cantidad: 40, unidad: "ml" },
-            { nombre: "Aceite neutro", cantidad: 25, unidad: "ml" },
-            { nombre: "Dulce de leche o ganache para rellenar", cantidad: 75, unidad: "g" }
+            { tipoIngrediente: 'harina', nombre: "Harina 0000", cantidad: 60, unidad: "g" },
+            { tipoIngrediente: 'cacao', nombre: "Cacao amargo en polvo", cantidad: 20, unidad: "g" },
+            { tipoIngrediente: 'azucar', nombre: "Azúcar", cantidad: 50, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo", cantidad: 1, unidad: "unidad" },
+            { tipoIngrediente: 'leche', nombre: "Leche", cantidad: 40, unidad: "ml" },
+            { tipoIngrediente: 'aceite', nombre: "Aceite neutro", cantidad: 25, unidad: "ml" },
+            { tipoIngrediente: 'relleno', nombre: "Dulce de leche o ganache para rellenar", cantidad: 75, unidad: "g" }
         ],
         minutos: 45,
         imagen: "imagenes/Torta-Chocolate.jpg",
@@ -124,13 +124,13 @@ const recetas = [
         descripcion: "Pancitos de queso y almidón de mandioca, típicos del litoral.",
         categoria: "Sándwich",
         ingredientes: [
-            { nombre: "Fécula de mandioca", cantidad: 125, unidad: "g" },
-            { nombre: "Queso de cáscara colorada", cantidad: 50, unidad: "g" },
-            { nombre: "Queso tipo sardo picado", cantidad: 40, unidad: "g" },
-            { nombre: "Manteca pomada", cantidad: 25, unidad: "g" },
-            { nombre: "Huevo", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Leche", cantidad: 25, unidad: "ml" },
-            { nombre: "Polvo de hornear", cantidad: 0.25, unidad: "cucharadita" }
+            { tipoIngrediente: 'mandioca', nombre: "Fécula de mandioca", cantidad: 125, unidad: "g" },
+            { tipoIngrediente: 'queso', nombre: "Queso de cáscara colorada", cantidad: 50, unidad: "g" },
+            { tipoIngrediente: 'queso', nombre: "Queso tipo sardo picado", cantidad: 40, unidad: "g" },
+            { tipoIngrediente: 'manteca', nombre: "Manteca pomada", cantidad: 25, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'leche', nombre: "Leche", cantidad: 25, unidad: "ml" },
+            { tipoIngrediente: 'polvo', nombre: "Polvo de hornear", cantidad: 0.25, unidad: "cucharadita" }
         ],
         minutos: 30,
         imagen: "imagenes/chipa.png",
@@ -149,12 +149,12 @@ const recetas = [
         descripcion: "Dorado y jugoso, con papas al horno como acompañamiento.",
         categoria: "Ensalada",
         ingredientes: [
-            { nombre: "Presa de pollo (pata/muslo o pechuga)", cantidad: 1, unidad: "unidad (apx 350g)" },
-            { nombre: "Papas grandes", cantidad: 1, unidad: "unidad" },
-            { nombre: "Limón", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Aceite de oliva", cantidad: 1, unidad: "cucharada" },
-            { nombre: "Romero y tomillo", cantidad: "a gusto", unidad: "" },
-            { nombre: "Ajo picado", cantidad: 0.5, unidad: "diente" }
+            { tipoIngrediente: 'pollo', nombre: "Presa de pollo (pata/muslo o pechuga)", cantidad: 1, unidad: "unidad (apx 350g)" },
+            { tipoIngrediente: 'papas', nombre: "Papas grandes", cantidad: 1, unidad: "unidad" },
+            { tipoIngrediente: 'limon', nombre: "Limón", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'aceite', nombre: "Aceite de oliva", cantidad: 1, unidad: "cucharada" },
+            { tipoIngrediente: 'condimentos', nombre: "Romero y tomillo", cantidad: "a gusto", unidad: "" },
+            { tipoIngrediente: 'ajo', nombre: "Ajo picado", cantidad: 0.5, unidad: "diente" }
         ],
         minutos: 60,
         imagen: "imagenes/Pollo-Papas.png",
@@ -173,9 +173,9 @@ const recetas = [
         descripcion: "Un corte clásico, a punto, con su costrita por fuera.",
         categoria: "Ensalada",
         ingredientes: [
-            { nombre: "Bife de chorizo de 3cm de grosor", cantidad: 250, unidad: "g" },
-            { nombre: "Sal gruesa o parrillera", cantidad: "a gusto", unidad: "" },
-            { nombre: "Pimienta negra recién molida", cantidad: "a gusto", unidad: "" }
+            { tipoIngrediente: 'chorizo', nombre: "Bife de chorizo de 3cm de grosor", cantidad: 250, unidad: "g" },
+            { tipoIngrediente: 'condimentos', nombre: "Sal gruesa o parrillera", cantidad: "a gusto", unidad: "" },
+            { tipoIngrediente: 'pimienta', nombre: "Pimienta negra recién molida", cantidad: "a gusto", unidad: "" }
         ],
         minutos: 25,
         imagen: "imagenes/Bife-Chorizo.jpg",
@@ -194,11 +194,11 @@ const recetas = [
         descripcion: "Queso derretido a la parrilla, con orégano y aceite de oliva.",
         categoria: "Sopa",
         ingredientes: [
-            { nombre: "Queso provolone para parrilla", cantidad: 1, unidad: "rodaja (100g)" },
-            { nombre: "Orégano seco", cantidad: 0.5, unidad: "cucharadita" },
-            { nombre: "Ají molido", cantidad: 0.25, unidad: "cucharadita" },
-            { nombre: "Aceite de oliva", cantidad: 0.5, unidad: "cucharada" },
-            { nombre: "Harina (para rebozar suavemente)", cantidad: 0.5, unidad: "cucharada" }
+            { tipoIngrediente: 'queso', nombre: "Queso provolone para parrilla", cantidad: 1, unidad: "rodaja (100g)" },
+            { tipoIngrediente: 'condimentos', nombre: "Orégano seco", cantidad: 0.5, unidad: "cucharadita" },
+            { tipoIngrediente: 'ajo', nombre: "Ají molido", cantidad: 0.25, unidad: "cucharadita" },
+            { tipoIngrediente: 'aceite', nombre: "Aceite de oliva", cantidad: 0.5, unidad: "cucharada" },
+            { tipoIngrediente: 'harina', nombre: "Harina (para rebozar suavemente)", cantidad: 0.5, unidad: "cucharada" }
         ],
         minutos: 10,
         imagen: "imagenes/Provoleta.jpg",
@@ -215,12 +215,12 @@ const recetas = [
         descripcion: "Repulgo casero, jugosas por dentro y doradas por fuera.",
         categoria: "Sándwich",
         ingredientes: [
-            { nombre: "Tapas de empanada", cantidad: 2, unidad: "unidades" },
-            { nombre: "Carne picada o cortada a cuchillo", cantidad: 100, unidad: "g" },
-            { nombre: "Cebolla", cantidad: 100, unidad: "g" },
-            { nombre: "Huevo duro picado", cantidad: 0.3, unidad: "unidad" },
-            { nombre: "Aceitunas verdes picadas", cantidad: 10, unidad: "g" },
-            { nombre: "Comino y pimentón dulce", cantidad: "a gusto", unidad: "" }
+            { tipoIngrediente: 'tapa', nombre: "Tapas de empanada", cantidad: 2, unidad: "unidades" },
+            { tipoIngrediente: 'carne', nombre: "Carne picada o cortada a cuchillo", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'cebolla', nombre: "Cebolla", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo duro picado", cantidad: 0.3, unidad: "unidad" },
+            { tipoIngrediente: 'aceitunas', nombre: "Aceitunas verdes picadas", cantidad: 10, unidad: "g" },
+            { tipoIngrediente: 'condimentos', nombre: "Comino y pimentón dulce", cantidad: "a gusto", unidad: "" }
         ],
         minutos: 40,
         imagen: "imagenes/Empanadas.jpg",
@@ -240,12 +240,12 @@ const recetas = [
         descripcion: "Maíz, zapallo y carne, cocidos a fuego lento por horas.",
         categoria: "Sopa",
         ingredientes: [
-            { nombre: "Maíz blanco partido (remojado)", cantidad: 75, unidad: "g" },
-            { nombre: "Porotos alubia (remojados)", cantidad: 50, unidad: "g" },
-            { nombre: "Zapallo plomo / cabutia", cantidad: 125, unidad: "g" },
-            { nombre: "Panceta salada", cantidad: 40, unidad: "g" },
-            { nombre: "Faldata o pechito de cerdo", cantidad: 80, unidad: "g" },
-            { nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" }
+            { tipoIngrediente: 'maiz', nombre: "Maíz blanco partido (remojado)", cantidad: 75, unidad: "g" },
+            { tipoIngrediente: 'porotos', nombre: "Porotos alubia (remojados)", cantidad: 50, unidad: "g" },
+            { tipoIngrediente: 'zapallo', nombre: "Zapallo plomo / cabutia", cantidad: 125, unidad: "g" },
+            { tipoIngrediente: 'carnes', nombre: "Panceta salada", cantidad: 40, unidad: "g" },
+            { tipoIngrediente: 'carne', nombre: "Faldata o pechito de cerdo", cantidad: 80, unidad: "g" },
+            { tipoIngrediente: 'chorizo', nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" }
         ],
         minutos: 180,
         imagen: "imagenes/Locro.png",
@@ -266,12 +266,12 @@ const recetas = [
         descripcion: "El combo de toda la vida, crocante y cremoso.",
         categoria: "Ensalada",
         ingredientes: [
-            { nombre: "Nalga o bola de lomo para milanesa", cantidad: 150, unidad: "g" },
-            { nombre: "Huevo batido con provenzal", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Pan rallado", cantidad: 75, unidad: "g" },
-            { nombre: "Papas para el puré", cantidad: 250, unidad: "g" },
-            { nombre: "Leche entera", cantidad: 30, unidad: "ml" },
-            { nombre: "Manteca", cantidad: 10, unidad: "g" }
+            { tipoIngrediente: 'carne', nombre: "Nalga o bola de lomo para milanesa", cantidad: 150, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo batido con provenzal", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'pan', nombre: "Pan rallado", cantidad: 75, unidad: "g" },
+            { tipoIngrediente: 'papas', nombre: "Papas para el puré", cantidad: 250, unidad: "g" },
+            { tipoIngrediente: 'leche', nombre: "Leche entera", cantidad: 30, unidad: "ml" },
+            { tipoIngrediente: 'manteca', nombre: "Manteca", cantidad: 10, unidad: "g" }
         ],
         minutos: 35,
         imagen: "imagenes/Milanesas-Pure.png",
@@ -429,11 +429,12 @@ recetasCortas = () => {
 /**
  * Mostrar todas las recetas
  * @method mostrarTodasRecetas
+ * @param recetalist - lista de recetas, por defecto todas las recetas
  */
-mostrarTodasRecetas = () => {
+mostrarTodasRecetas = (recetalist = recetas) => {
     let contenido = "";
 
-    recetas.forEach((receta) => {
+    recetalist.forEach((receta) => {
         contenido += `
                     <article class="tarjeta-receta" id="receta-${receta.idReceta}" data-categoria="${receta.categoria.toLowerCase()}"
                         data-tiempo="${receta.minutos} minutos" data-teoria="${receta.tipoPlato.toLowerCase()}">
@@ -453,3 +454,4 @@ mostrarTodasRecetas = () => {
 
     document.getElementById('grilla-recetas').innerHTML = contenido;
 }
+
