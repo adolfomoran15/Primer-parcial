@@ -407,6 +407,7 @@ transition: all 0.5s ease;
 
 
 #grilla-recetas{
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 1.5rem;
