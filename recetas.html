@@ -43,20 +43,13 @@
             <section id="filtros">
                 <h2>Filtrar recetas</h2>
                 <div id="filtro-categoria">
-                    <h3>Categoría</h3>
-                    <label>
-                        <input type="checkbox" id="check-cat-entrada" name="categoria" value="entrada">
-                        Entrada
-                    </label>
-
-                    <label>
-                        <input type="checkbox" id="check-cat-principal" name="categoria" value="principal">
-                        Plato principal
-                    </label>
-                    <label>
-                        <input type="checkbox" id="check-cat-postre" name="categoria" value="postre">
-                        Postre
-                    </label>
+                    <label for="select-categoria" class="titulo-filtro">Categoría</label>
+                    <select id="select-categoria" name="categoria">
+                        <option value="todas">Todas las categorías</option>
+                        <option value="entrada">Entrada</option>
+                        <option value="principal">Plato principal</option>
+                        <option value="postre">Postre</option>
+                    </select>
                 </div>
 
                 <div id="filtro-ingrediente">
@@ -101,20 +94,13 @@
                     </label>
                 </div>
                 <div id="filtro-teoria">
-                    <h3>¿Sopa, sándwich o ensalada?</h3>
-
-                    <label>
-                        <input type="checkbox" id="check-teoria-sopa" name="teoria" value="sopa">
-                        Sopa
-                    </label>
-                    <label>
-                        <input type="checkbox" id="check-teoria-sandwich" name="teoria" value="sandwich">
-                        Sándwich
-                    </label>
-                    <label>
-                        <input type="checkbox" id="check-teoria-ensalada" name="teoria" value="ensalada">
-                        Ensalada
-                    </label>
+                    <label for="select-tipo-plato" class="titulo-filtro">¿Sopa, sándwich o ensalada?</label>
+                    <select id="select-tipo-plato" name="categoria">
+                        <option value="todas">Todas las categorías</option>
+                        <option value="sopa">Sopa</option>
+                        <option value="sandwich">Sándwich</option>
+                        <option value="Ensalada">Ensalada</option>
+                    </select>
                 </div>
                 <div id="filtro-tiempo">
                     <label for="select-tiempo" class="titulo-filtro">Tiempo de preparación</label>
