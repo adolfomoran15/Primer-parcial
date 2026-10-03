@@ -374,12 +374,12 @@ mostrarReceta = () => {
         mostrarIngredientes(infoReceta.ingredientes);
         
         infoReceta.pasos.forEach((paso, num) => {
-            contenidoPasos += `
-                            <li aria-label="paso ${num} ${infoReceta.pasos[num]}}">
-                                ${infoReceta.pasos[num]}
-                            </li>
-                            ` 
-        });
+        contenidoPasos += `
+        <li aria-label="paso ${num} ${paso}">
+            ${paso}
+        </li>
+    `;
+});
 
         document.getElementById('pasos').innerHTML = contenidoPasos;
     }
@@ -422,8 +422,8 @@ mostrarIngredientes = (listIngredientes) => {
                             <li aria-label="ingrediente ${listIngredientes[num].nombre}">
                                 <label>
                                     <input type="checkbox" id="ingrediente-${num}">
-                                    <span id="cantidad-ingrediente">${total} ${listIngredientes[num].unidad}</span>
-                                    <span id="nombre-ingrediente"> ${listIngredientes[num].nombre}</span>
+                                    <span class="cantidad-ingrediente">${total} ${listIngredientes[num].unidad}</span>
+                                    <span class="nombre-ingrediente"> ${listIngredientes[num].nombre}</span>
                                 </label>
                             </li>
                             `
@@ -442,7 +442,7 @@ recetasCortas = () => {
 
     while (numerosUnicos.size < 3) {
         
-        const numero = Math.floor(Math.random() * 12) + 1;
+        const numero = Math.floor(Math.random() * recetas.length);
         numerosUnicos.add(numero);
     }
 
@@ -473,34 +473,6 @@ recetasCortas = () => {
     document.getElementById('recetas-cortas').innerHTML = contenido;
 }
 
-/**
- * Mostrar todas las recetas
- * @method mostrarTodasRecetas
- * @param recetalist - lista de recetas, por defecto todas las recetas
- */
-mostrarTodasRecetas = (recetalist = recetas) => {
-    let contenido = "";
-
-    recetalist.forEach((receta) => {
-        contenido += `
-                    <article class="tarjeta-receta" id="receta-${receta.idReceta}" data-categoria="${receta.categoria.toLowerCase()}"
-                        data-tiempo="${receta.minutos} minutos" data-teoria="${receta.tipoPlato.toLowerCase()}">
-                        <!--IMAGEN-->
-                        <h3>
-                            ${receta.nombre}
-                        </h3>
-                        <p>
-                            ${receta.descripcion}
-                        </p>
-                        <button type="button" class="boton-ver-receta" onclick="verReceta('${receta.id}')">
-                            Ver receta
-                        </button>
-                    </article>
-                    `
-    }); 
-
-    document.getElementById('grilla-recetas').innerHTML = contenido;
-}
 
 /**
  * Filtra las recetas por valores ingresados por el usuario(categoria, tiempo, teoria, ingredientes)
@@ -525,27 +497,27 @@ aplicarFiltros = () => {
     }
 
     if(tiempo !== "todos"){
-        newRecetas = newRecetas.filter((receta) => {
-            switch(tiempo){
-                case "rapido":
-                    newRecetas = receta.minutos <= 30;
-                    break;
-                case "medio":
-                    newRecetas = receta.minutos > 30 && receta.minutos <= 60;
-                    break;
-                case "largo":
-                    newRecetas = receta.minutos > 60;
-                    break;
-                default:
-                    newRecetas = recetas;
-                    break;
-            }
-        });
-    }
-    
+    newRecetas = newRecetas.filter((receta) => {
+        switch(tiempo){
+            case "rapido":
+                return receta.minutos <= 30;
+
+            case "medio":
+                return receta.minutos > 30 && receta.minutos <= 60;
+
+            case "largo":
+                return receta.minutos > 60;
+
+            default:
+                return true;
+        }
+    });
+}
     if(teoria !== "todas"){
-        newRecetas = newRecetas.filter((receta) => receta.categoria.toLowerCase() === teoria.toLowerCase());
-    }
+    newRecetas = newRecetas.filter(
+        receta => receta.teoria.toLowerCase() === teoria.toLowerCase()
+    );
+}
     
     let ingredientesArray = [];
     papa ? ingredientesArray.push("papa") : "";
@@ -564,8 +536,7 @@ aplicarFiltros = () => {
         });
     });
 }
-
-mostrarTodasRecetas(newRecetas);
+mostrarRecetas(newRecetas, "grilla-recetas");
 }
 
 
@@ -680,8 +651,41 @@ const moverCarrusel = direccion => {
 
 const filtrarReceta = () => {
     let searchWord = document.getElementById("input-buscar-recetas").value;
-    localStorage.setItem("searchWord",searchWord);
+
+    if(searchWord !== ""){
+        localStorage.setItem("searchWord", searchWord);
+    }else{
+        localStorage.removeItem("searchWord");
+    }
+
     window.location.href = "recetas.html";
 };
 
+/**
+ * Limpia todos los filtros y muestra nuevamente todas las recetas
+ * @method limpiarFiltros
+ */
+const limpiarFiltros = () => {
+    document.getElementById("select-categoria").value = "todas";
+    document.getElementById("select-tipo-plato").value = "todas";
+    document.getElementById("select-tiempo").value = "todos";
 
+    document.getElementById("check-ing-papa").checked = false;
+    document.getElementById("check-ing-tomate").checked = false;
+    document.getElementById("check-ing-queso").checked = false;
+    document.getElementById("check-ing-lechuga").checked = false;
+    document.getElementById("check-ing-carne").checked = false;
+    document.getElementById("check-ing-huevo").checked = false;
+    document.getElementById("check-ing-cebolla").checked = false;
+    document.getElementById("check-ing-harina").checked = false;
+    localStorage.removeItem("searchWord");
+    mostrarRecetas(recetas, "grilla-recetas");
+};
+
+/**
+ * Vuelve al catálogo de recetas
+ * @method volverRecetas
+ */
+const volverRecetas = () => {
+    window.location.href = "recetas.html";
+};
