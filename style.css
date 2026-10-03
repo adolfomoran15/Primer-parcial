@@ -259,15 +259,21 @@ footer #nav-sitio a:focus::after {
     gap: 1rem;
     width: 100%;
 }
-#lista-destacadas{
+
+#ventana-destacadas{
     width: 53%;
+    overflow: hidden;
+}
+
+#lista-destacadas{
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-    overflow: hidden;
+    transition: transform 0.4s ease;
 }
 .tarjeta-receta{
- flex: 0 0 300px;
+ flex: 0 0 100%;
     background-color: var(--color-blanco);
     border-radius: 30px;
     overflow: hidden;
@@ -409,9 +415,6 @@ transition: all 0.5s ease;
     margin: 0 auto;
 }
 
-.tarjeta-receta {
-    flex: 0 0 100%;
-}
 
 #contenedor-filtros {
     width: 21.5%;

@@ -313,3 +313,60 @@ const recetas = [
         ]
     }
 ];
+let posicionCarrusel = 0;
+
+/**
+ * Carga las recetas destacadas en el carrusel
+ * @method CargarDestacadas
+ */
+const CargarDestacadas = () => {
+    const contenedor = document.getElementById("lista-destacadas");
+    const recetasdestacadas = recetas.filter (
+        receta => receta.destacada === true );
+
+        contenedor.innerHTML = "";
+
+for (let i = 0;i <recetasdestacadas.length; i++){
+    const receta = recetasdestacadas[i];
+    contenedor.innerHTML += `<article class="tarjeta-receta">
+        <img src="${receta.imagen}" alt="${receta.nombre}">
+        <h3>${receta.nombre}</h3>
+        <p>${receta.descripcion}</p>
+        <button 
+            type="button" 
+            class="boton-ver-receta-destacada"
+            onclick="verReceta('${receta.id}')">
+            Ver receta
+        </button>
+    </article>`;
+}
+};
+CargarDestacadas();
+
+/**
+ * Mueve el carrusel de recetas destacadas
+ * @method moverCarrusel
+ * @param {string} direccion - Dirección en la que se moverá el carrusel
+ */
+const moverCarrusel = direccion => {
+    const lista = document.getElementById("lista-destacadas");
+    const ventana = document.getElementById("ventana-destacadas");
+    const espacio = 24;
+    const desplazamiento = ventana.offsetWidth + espacio;
+    const cantidadRecetas = 3;
+
+    if (direccion === "derecha"){
+        posicionCarrusel++;
+        if(posicionCarrusel >= cantidadRecetas){
+        posicionCarrusel = 0;
+    }
+    }
+    if (direccion === "izquierda"){
+        posicionCarrusel--;
+
+        if(posicionCarrusel < 0 ){
+            posicionCarrusel = cantidadRecetas -1;
+        }
+    }
+    lista.style.transform = `translateX(-${posicionCarrusel * desplazamiento}px)`;
+};
