@@ -316,29 +316,73 @@ const recetas = [
 let posicionCarrusel = 0;
 
 /**
+ *  Muestra una lista de recetas en el catálogo
+ * @method mostrarRecetas
+ * @param {Array} lista - Lista de recetas que se desea mostrar
+ * @param {string} idContenedor - Id del contenedor donde se mostrarán las recetas
+ */
+const mostrarRecetas = (lista,idContenedor) => {
+const contenedor = document.getElementById(idContenedor);
+contenedor.innerHTML = "";
+for(let i = 0; i < lista.length; i++){
+    const receta = lista[i];
+    contenedor.innerHTML += `<article class="tarjeta-receta">
+
+                <img src="${receta.imagen}" alt="${receta.nombre}">
+
+                <h3>${receta.nombre}</h3>
+
+                <p>${receta.descripcion}</p>
+
+                <button
+                    type="button"
+                    class="boton-ver-receta"
+                    onclick="verReceta('${receta.id}')">
+
+                    Ver receta
+
+                </button>
+
+            </article>`;
+}
+};
+/**
+ * Carga las recetas en el catalogo
+ * @method cargarRecetas
+ */
+const cargarRecetas = () => {
+    const grilla = document.getElementById("grilla-recetas");
+    if (grilla) {
+
+        let searchWord = localStorage.getItem("searchWord");
+
+        let nuevaLista = recetas;
+
+        if (searchWord) {
+
+            nuevaLista = nuevaLista.filter(
+                receta => receta.nombre.toLowerCase().includes(searchWord.toLowerCase())
+            );
+        }
+
+        mostrarRecetas(nuevaLista, "grilla-recetas");
+    }
+};
+cargarRecetas(); 
+
+/**
  * Carga las recetas destacadas en el carrusel
  * @method CargarDestacadas
  */
 const CargarDestacadas = () => {
-    const contenedor = document.getElementById("lista-destacadas");
-    const recetasdestacadas = recetas.filter (
-        receta => receta.destacada === true );
+    const lista = document.getElementById("lista-destacadas");
 
-        contenedor.innerHTML = "";
+    if (lista) {
 
-for (let i = 0;i <recetasdestacadas.length; i++){
-    const receta = recetasdestacadas[i];
-    contenedor.innerHTML += `<article class="tarjeta-receta">
-        <img src="${receta.imagen}" alt="${receta.nombre}">
-        <h3>${receta.nombre}</h3>
-        <p>${receta.descripcion}</p>
-        <button 
-            type="button" 
-            class="boton-ver-receta-destacada"
-            onclick="verReceta('${receta.id}')">
-            Ver receta
-        </button>
-    </article>`;
+        const recetasdestacadas = recetas.filter(
+            receta => receta.destacada === true
+        );
+        mostrarRecetas(recetasdestacadas,"lista-destacadas");
 }
 };
 CargarDestacadas();
@@ -369,4 +413,39 @@ const moverCarrusel = direccion => {
         }
     }
     lista.style.transform = `translateX(-${posicionCarrusel * desplazamiento}px)`;
+};
+
+
+/**
+ * Mueve el carrusel de recetas destacadas
+ * @method verReceta
+ * @param {string} id - id de la receta que se desea visualizar 
+ */
+
+const verReceta = id => {
+    const receta = recetas.find(
+        receta => receta.id === id
+    );
+    if (receta){}
+};
+
+/**
+ * filtra recetas por palabra
+ * @method filtrarReceta
+ */
+
+const filtrarReceta = () => {
+    let searchWord = document.getElementById("input-buscar-recetas").value;
+    localStorage.setItem("searchWord",searchWord);
+    window.location.href = "recetas.html";
+};
+
+/**
+ * Elimina los filtros aplicados y muestra todas las recetas
+ * @method limpiarFiltros
+ */
+
+const limpiarFiltros = () => {
+    localStorage.removeItem("searchWord");
+    mostrarRecetas(recetas,"grilla-recetas");
 };
