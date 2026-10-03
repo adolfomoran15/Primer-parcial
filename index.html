@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Adolfo Moran de la Vega, Franco Torres">
-    <meta name="description"
-        content="Recetario web que te ayuda a decidir que cocinar. 
+    <meta name="description" content="Recetario web que te ayuda a decidir que cocinar. 
         Cuenta con calculadora de porciones, checklist de ingredientes y distintos filtros">
     <meta name="keywords" content="recetas, cocina, sopa, sandwich, ensalada">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Betania+Patmos&family=Erica+One&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,7 +24,7 @@
         rel="stylesheet">
     <link rel="icon" type="image/png" href="imagenes/favicon.png">
     <title>Recetario web S.E.S</title>
-</head> <!-- link a CSS y Javascript  -->
+</head>
 
 <body>
     <div id="contenedor-header">
@@ -50,7 +49,7 @@
                     <label for="input-buscar-recetas">Buscar recetas</label>
                     <input type="text" id="input-buscar-recetas" name="buscar-recetas"
                         placeholder="Ej: milanesa, sopa de calabaza..." maxlength="40">
-                    <button type="button" id="boton-buscar">Buscar</button>
+                    <button type="button" id="boton-buscar" onclick="filtrarReceta()">Buscar</button>
                 </div>
             </div>
         </section>
@@ -59,31 +58,9 @@
                 <h2>Recetas destacadas</h2>
                 <div id="carrusel-destacadas">
                     <button type="button" id="boton-flecha-izquierda" onclick="moverCarrusel('izquierda')">‹</button>
-                    <div id="lista-destacadas">
-                        <article class="tarjeta-receta" id="destacada-sopa-calabaza">
-                            <img src="imagenes/sopa_calabaza.jpg" alt="Sopa de calabaza">
-                            <h3>Sopa de calabaza</h3>
-                            <p>Cremosa, rápida y perfecta para el invierno.</p>
-                            <button type="button" class="boton-ver-receta-destacada"
-                                onclick="verReceta('sopa-calabaza')">Ver
-                                receta</button>
-                        </article>
-                        <article class="tarjeta-receta" id="destacada-sandwich-milanesa">
-                            <img src="imagenes/sandwich_milanesa.jpg" alt="Sándwich de milanesa">
-                            <h3>Sandwich de milanesa</h3>
-                            <p>El clásico de fin de semana, a puro pan y milanesa.</p>
-                            <button type="button" class="boton-ver-receta-destacada"
-                                onclick="verReceta('sandwich-milanesa')">Ver
-                                receta</button>
-                        </article>
-                        <article class="tarjeta-receta" id="destacada-ensalada-cesar">
-                            <img src="imagenes/ensalada.jpg" alt="Ensalada César">
-                            <h3>Ensalada César</h3>
-                            <p>Fresca, liviana y lista en menos de 15 minutos.</p>
-                            <button type="button" class="boton-ver-receta-destacada"
-                                onclick="verReceta('ensalada-cesar')">Ver
-                                receta</button>
-                        </article>
+                    <div id="ventana-destacadas">
+                        <div id="lista-destacadas">
+                        </div>
                     </div>
                     <button type="button" id="boton-flecha-derecha" onclick="moverCarrusel('derecha')">›</button>
                 </div>
@@ -92,7 +69,6 @@
     </main>
     <div id="contenedor-footer">
         <footer id="footer-principal">
-            <!-- IMAGEN -->
             <nav id="nav-texto">
                 <h6>S.E.S. cocina</h6>
                 <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
@@ -105,6 +81,7 @@
             </nav>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

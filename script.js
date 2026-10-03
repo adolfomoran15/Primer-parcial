@@ -1,9 +1,11 @@
 const recetas = [
     {
-        id: 'sopa-calabaza',
+        id: "sopa-calabaza",
         nombre: "Sopa de calabaza",
         descripcion: "Cremosa, rápida y perfecta para el invierno.",
-        categoria: "Sopa",
+        categoria: "Sopas",
+        teoria: "sopa",
+        destacada: true,
         ingredientes: [
             { tipoIngrediente: 'calabaza', nombre: "Calabaza", cantidad: 150, unidad: "g" },
             { tipoIngrediente: 'cebolla', nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
@@ -23,10 +25,12 @@ const recetas = [
         tipoPlato: "Entrada"
     },
     {
-        id: 'sandwich-milanesa',
+        id: "sandwich-milanesa",
         nombre: "Sándwich de milanesa",
         descripcion: "El clásico de fin de semana, a puro pan y milanesa.",
-        categoria: "Sándwich",
+        categoria: "Sándwiches",
+        teoria: "sandwich",
+        destacada: true,
         ingredientes: [
             { tipoIngrediente: 'milanesa', nombre: "Milanesa de carne cocida", cantidad: 1, unidad: "unidad" },
             { tipoIngrediente: 'pan', nombre: "Pan francés o baguette", cantidad: 0.5, unidad: "unidad" },
@@ -45,10 +49,12 @@ const recetas = [
         tipoPlato: "Principal"
     },
     {
-        id: 'ensalada-cesar',
+        id: "ensalada-cesar",
         nombre: "Ensalada César",
         descripcion: "Fresca, liviana y lista en menos de 15 minutos.",
-        categoria: "Ensalada",
+        categoria: "Ensaladas",
+        teoria: "ensalada",
+        destacada: true,
         ingredientes: [
             { tipoIngrediente: 'lechuga', nombre: "Lechuga romana", cantidad: 0.25, unidad: "planta" },
             { tipoIngrediente: 'pollo', nombre: "Pechuga de pollo a la plancha", cantidad: 100, unidad: "g" },
@@ -67,10 +73,12 @@ const recetas = [
         tipoPlato: "Entrada"
     },
     {
-        id: 'guiso-lentejas',
+        id: "guiso-lentejas",
         nombre: "Guiso de lentejas",
         descripcion: "Casero y abundante, de esos que se cocinan a fuego lento.",
-        categoria: "Sopa",
+        categoria: "Guisos",
+        teoria: "sopa",
+        destacada: false,
         ingredientes: [
             { tipoIngrediente: 'lentejas', nombre: "Lentejas hidratadas", cantidad: 100, unidad: "g" },
             { tipoIngrediente: 'chorizo', nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" },
@@ -93,10 +101,14 @@ const recetas = [
         tipoPlato: "Principal"
     },
     {
-        id: 'torta-chocolate',
+
+        id: "torta-chocolate",
         nombre: "Torta de chocolate",
         descripcion: "Bizcochuelo húmedo con relleno y cobertura de chocolate.",
-        categoria: "Sándwich",
+        categoria: "Postres",
+        
+        teoria: "sandwich",
+        destacada: false,
         ingredientes: [
             { tipoIngrediente: 'harina', nombre: "Harina 0000", cantidad: 60, unidad: "g" },
             { tipoIngrediente: 'cacao', nombre: "Cacao amargo en polvo", cantidad: 20, unidad: "g" },
@@ -119,10 +131,14 @@ const recetas = [
         tipoPlato: "Postre"
     },
     {
-        id: 'chipa',
+
+        id: "chipa",
         nombre: "Chipa",
         descripcion: "Pancitos de queso y almidón de mandioca, típicos del litoral.",
-        categoria: "Sándwich",
+        categoria: "Panadería",
+        
+        teoria: "sandwich",
+        destacada: false,
         ingredientes: [
             { tipoIngrediente: 'mandioca', nombre: "Fécula de mandioca", cantidad: 125, unidad: "g" },
             { tipoIngrediente: 'queso', nombre: "Queso de cáscara colorada", cantidad: 50, unidad: "g" },
@@ -144,10 +160,16 @@ const recetas = [
         tipoPlato: "Entrada"
     },
     {
-        id: 'pollo-horno',
+
+        id: "pollo-papas",
         nombre: "Pollo al horno con papas",
         descripcion: "Dorado y jugoso, con papas al horno como acompañamiento.",
-        categoria: "Ensalada",
+        categoria: "Platos principales",
+        
+        teoria: "ensalada",
+        destacada: false,
+
+
         ingredientes: [
             { tipoIngrediente: 'pollo', nombre: "Presa de pollo (pata/muslo o pechuga)", cantidad: 1, unidad: "unidad (apx 350g)" },
             { tipoIngrediente: 'papas', nombre: "Papas grandes", cantidad: 1, unidad: "unidad" },
@@ -168,10 +190,15 @@ const recetas = [
         tipoPlato: "Principal"
     },
     {
-        id: 'bife-chorizo',
+
+        id: "bife-chorizo",
         nombre: "Bife de chorizo a la parrilla",
         descripcion: "Un corte clásico, a punto, con su costrita por fuera.",
-        categoria: "Ensalada",
+        categoria: "Parrilla",
+        
+        teoria: "ensalada",
+        destacada: false,
+
         ingredientes: [
             { tipoIngrediente: 'chorizo', nombre: "Bife de chorizo de 3cm de grosor", cantidad: 250, unidad: "g" },
             { tipoIngrediente: 'condimentos', nombre: "Sal gruesa o parrillera", cantidad: "a gusto", unidad: "" },
@@ -189,10 +216,15 @@ const recetas = [
         tipoPlato: "Principal"
     },
     {
-        id: 'provoleta',
+
+        id: "provoleta",
         nombre: "Provoleta",
         descripcion: "Queso derretido a la parrilla, con orégano y aceite de oliva.",
-        categoria: "Sopa",
+        categoria: "Entradas",
+       
+        teoria: "sopa",
+        destacada: false,
+
         ingredientes: [
             { tipoIngrediente: 'queso', nombre: "Queso provolone para parrilla", cantidad: 1, unidad: "rodaja (100g)" },
             { tipoIngrediente: 'condimentos', nombre: "Orégano seco", cantidad: 0.5, unidad: "cucharadita" },
@@ -210,10 +242,15 @@ const recetas = [
         tipoPlato: "Entrada"
     },
     {
-        id: 'empanadas-carne',
+
+        id: "empanadas-carne",
         nombre: "Empanadas de carne",
         descripcion: "Repulgo casero, jugosas por dentro y doradas por fuera.",
-        categoria: "Sándwich",
+        categoria: "Empanadas",
+        
+        teoria: "sandwich",
+        destacada: false,
+
         ingredientes: [
             { tipoIngrediente: 'tapa', nombre: "Tapas de empanada", cantidad: 2, unidad: "unidades" },
             { tipoIngrediente: 'carne', nombre: "Carne picada o cortada a cuchillo", cantidad: 100, unidad: "g" },
@@ -235,10 +272,15 @@ const recetas = [
         tipoPlato: "Entrada"
     },
     {
-        id: 'locro',
+
+        id: "locro",
         nombre: "Locro",
         descripcion: "Maíz, zapallo y carne, cocidos a fuego lento por horas.",
-        categoria: "Sopa",
+        categoria: "Platos tradicionales",
+        
+        teoria: "sopa",
+        destacada: false,
+
         ingredientes: [
             { tipoIngrediente: 'maiz', nombre: "Maíz blanco partido (remojado)", cantidad: 75, unidad: "g" },
             { tipoIngrediente: 'porotos', nombre: "Porotos alubia (remojados)", cantidad: 50, unidad: "g" },
@@ -261,10 +303,15 @@ const recetas = [
         tipoPlato: "Principal"
     },
     {
-        id: 'milanesas-pure',
+
+        id: "milanesas-pure",
         nombre: "Milanesas con puré",
         descripcion: "El combo de toda la vida, crocante y cremoso.",
-        categoria: "Ensalada",
+        categoria: "Platos principales",
+       
+        teoria: "ensalada",
+        destacada: false,
+
         ingredientes: [
             { tipoIngrediente: 'carne', nombre: "Nalga o bola de lomo para milanesa", cantidad: 150, unidad: "g" },
             { tipoIngrediente: 'huevo', nombre: "Huevo batido con provenzal", cantidad: 0.5, unidad: "unidad" },
@@ -511,20 +558,130 @@ aplicarFiltros = () => {
     harina ? ingredientesArray.push("harina") : "";
 
     if(ingredientesArray.length > 0){
-        newRecetas = newRecetas.filter((receta) => {
-            return receta.ingredientes.some((ingrediente) => {
-                return ingredientesArray.includes(ingrediente.tipoIngrediente.toLowerCase());
-            });
+    newRecetas = newRecetas.filter((receta) => {
+        return receta.ingredientes.some((ingrediente) => {
+            return ingredientesArray.includes(ingrediente.tipoIngrediente.toLowerCase());
         });
-    }
-
-    mostrarTodasRecetas(newRecetas);
+    });
 }
+
+mostrarTodasRecetas(newRecetas);
+}
+
+
+let posicionCarrusel = 0;
 
 /**
- * Remueve todos los filtros
- * @method limpiarFiltros()
+ *  Muestra una lista de recetas en el catálogo
+ * @method mostrarRecetas
+ * @param {Array} lista - Lista de recetas que se desea mostrar
+ * @param {string} idContenedor - Id del contenedor donde se mostrarán las recetas
  */
-limpiarFiltros = () => {
-    mostrarTodasRecetas();
+const mostrarRecetas = (lista,idContenedor) => {
+const contenedor = document.getElementById(idContenedor);
+contenedor.innerHTML = "";
+for(let i = 0; i < lista.length; i++){
+    const receta = lista[i];
+    contenedor.innerHTML += `<article class="tarjeta-receta">
+
+                <img src="${receta.imagen}" alt="${receta.nombre}">
+
+                <h3>${receta.nombre}</h3>
+
+                <p>${receta.descripcion}</p>
+
+                <button
+                    type="button"
+                    class="boton-ver-receta"
+                    onclick="verReceta('${receta.id}')">
+
+                    Ver receta
+
+                </button>
+
+            </article>`;
 }
+};
+/**
+ * Carga las recetas en el catalogo
+ * @method cargarRecetas
+ */
+const cargarRecetas = () => {
+    const grilla = document.getElementById("grilla-recetas");
+    if (grilla) {
+
+        let searchWord = localStorage.getItem("searchWord");
+
+        let nuevaLista = recetas;
+
+        if (searchWord) {
+
+            nuevaLista = nuevaLista.filter(
+                receta => receta.nombre.toLowerCase().includes(searchWord.toLowerCase())
+            );
+        }
+
+        mostrarRecetas(nuevaLista, "grilla-recetas");
+    }
+};
+cargarRecetas(); 
+
+/**
+ * Carga las recetas destacadas en el carrusel
+ * @method CargarDestacadas
+ */
+const CargarDestacadas = () => {
+    const lista = document.getElementById("lista-destacadas");
+
+    if (lista) {
+
+        const recetasdestacadas = recetas.filter(
+            receta => receta.destacada === true
+        );
+        mostrarRecetas(recetasdestacadas,"lista-destacadas");
+}
+};
+CargarDestacadas();
+
+/**
+ * Mueve el carrusel de recetas destacadas
+ * @method moverCarrusel
+ * @param {string} direccion - Dirección en la que se moverá el carrusel
+ */
+const moverCarrusel = direccion => {
+    const lista = document.getElementById("lista-destacadas");
+    const ventana = document.getElementById("ventana-destacadas");
+    const espacio = 24;
+    const desplazamiento = ventana.offsetWidth + espacio;
+    const cantidadRecetas = 3;
+
+    if (direccion === "derecha"){
+        posicionCarrusel++;
+        if(posicionCarrusel >= cantidadRecetas){
+        posicionCarrusel = 0;
+    }
+    }
+    if (direccion === "izquierda"){
+        posicionCarrusel--;
+
+        if(posicionCarrusel < 0 ){
+            posicionCarrusel = cantidadRecetas -1;
+        }
+    }
+    lista.style.transform = `translateX(-${posicionCarrusel * desplazamiento}px)`;
+};
+
+
+
+/**
+ * filtra recetas por palabra
+ * @method filtrarReceta
+ */
+
+const filtrarReceta = () => {
+    let searchWord = document.getElementById("input-buscar-recetas").value;
+    localStorage.setItem("searchWord",searchWord);
+    window.location.href = "recetas.html";
+};
+
+
