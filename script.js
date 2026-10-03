@@ -455,3 +455,68 @@ mostrarTodasRecetas = (recetalist = recetas) => {
     document.getElementById('grilla-recetas').innerHTML = contenido;
 }
 
+/**
+ * Filtra las recetas por valores ingresados por el usuario(categoria, tiempo, teoria, ingredientes)
+ * @method aplicarFiltros
+ */
+aplicarFiltros = () => {
+    let newRecetas = recetas;
+    let categoria = document.getElementById('select-categoria').value;
+    let tiempo = document.getElementById('select-tiempo').value;
+    let teoria = document.getElementById('select-tipo-plato').value;
+    let papa = document.getElementById('check-ing-papa').checked;
+    let tomate = document.getElementById('check-ing-tomate').checked;
+    let queso = document.getElementById('check-ing-queso').checked;
+    let lechuga = document.getElementById('check-ing-lechuga').checked;
+    let carne = document.getElementById('check-ing-carne').checked;
+    let huevo = document.getElementById('check-ing-huevo').checked;
+    let cebolla = document.getElementById('check-ing-cebolla').checked;
+    let harina = document.getElementById('check-ing-harina').checked;
+
+    if(categoria !== "todas"){
+        newRecetas = newRecetas.filter(receta => receta.tipoPlato.toLowerCase() === categoria.toLowerCase());
+    }
+
+    if(tiempo !== "todos"){
+        newRecetas = newRecetas.filter((receta) => {
+            switch(tiempo){
+                case "rapido":
+                    newRecetas = receta.minutos <= 30;
+                    break;
+                case "medio":
+                    newRecetas = receta.minutos > 30 && receta.minutos <= 60;
+                    break;
+                case "largo":
+                    newRecetas = receta.minutos > 60;
+                    break;
+                default:
+                    newRecetas = recetas;
+                    break;
+            }
+        });
+    }
+    
+    if(teoria !== "todas"){
+        newRecetas = newRecetas.filter((receta) => receta.categoria.toLowerCase() === teoria.toLowerCase());
+    }
+    
+    let ingredientesArray = [];
+    papa ? ingredientesArray.push("papa") : "";
+    tomate ? ingredientesArray.push("tomate") : "";
+    queso ? ingredientesArray.push("queso") : "";
+    lechuga ? ingredientesArray.push("lechuga") : "";
+    carne ? ingredientesArray.push("carne") : "";
+    huevo ? ingredientesArray.push("huevo") : "";
+    cebolla ? ingredientesArray.push("cebolla") : "";
+    harina ? ingredientesArray.push("harina") : "";
+
+    if(ingredientesArray.length > 0){
+        newRecetas = newRecetas.filter((receta) => {
+            return receta.ingredientes.some((ingrediente) => {
+                return ingredientesArray.includes(ingrediente.tipoIngrediente.toLowerCase());
+            });
+        });
+    }
+
+    mostrarTodasRecetas(newRecetas);
+}
