@@ -450,7 +450,7 @@ transition: all 0.5s ease;
     text-align: center;
 }
 
-#filtros h3,#filtros .titulo-filtro {
+#filtros h3, #filtros .titulo-filtro {
     margin: 0 0 0.8rem;
     font-size: 1rem;
     font-weight: 600;
@@ -477,7 +477,9 @@ transition: all 0.5s ease;
     accent-color: var(--color-header);
 }
 
-#select-tiempo {
+#select-tiempo, 
+#select-categoria, 
+#select-tipo-plato {
     display: block;
     width: 90%;
     padding: 0.5rem 0.5rem;
@@ -492,7 +494,9 @@ transition: all 0.5s ease;
     
 }
 
-#select-tiempo:focus {
+#select-tiempo:focus,
+#select-categoria:focus, 
+#select-tipo-plato:focus {
     outline: none;
     border-color: var(--color-secundario);
 }
@@ -652,6 +656,7 @@ transition: all 0.5s ease;
 #informacion-recetas .imagen-receta {
     flex: 0 0 40%;
     max-width: 32rem;
+    margin: 1rem 0 0 1rem;
         
     img {
         width: 100%;
@@ -693,7 +698,7 @@ transition: all 0.5s ease;
 .etiqueta-plato p {
     margin: 0;
     font-size: 1rem;
-    font-weight: 420;
+    font-weight: 400;
     color: var(--color-texto);
 }
 
@@ -973,4 +978,19 @@ transition: all 0.5s ease;
     font-size: 0.8rem;
     color: var(--color-secundario);
     font-weight: 600;
+}
+
+/* INSERCION DINAMICA */
+#cantidad-ingrediente{
+    display: inline;
+    color: var(--color-principal);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* INSERCION DINAMICA */
+#nombre-ingrediente{
+    display: inline;
+    font-size: 0.8rem;
+    font-weight: 500;
 }

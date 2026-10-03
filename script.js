@@ -4,16 +4,14 @@ const recetas = [
         nombre: "Sopa de calabaza",
         descripcion: "Cremosa, rápida y perfecta para el invierno.",
         categoria: "Sopas",
-        tipoPlato: "entrada",
         teoria: "sopa",
         destacada: true,
-
         ingredientes: [
-            { nombre: "Calabaza", cantidad: 150, unidad: "g" },
-            { nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Caldo de verduras", cantidad: 150, unidad: "ml" },
-            { nombre: "Crema de leche", cantidad: 30, unidad: "ml" },
-            { nombre: "Sal y pimienta", cantidad: "a gusto", unidad: "" }
+            { tipoIngrediente: 'calabaza', nombre: "Calabaza", cantidad: 150, unidad: "g" },
+            { tipoIngrediente: 'cebolla', nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'caldo', nombre: "Caldo de verduras", cantidad: 150, unidad: "ml" },
+            { tipoIngrediente: 'crema', nombre: "Crema de leche", cantidad: 30, unidad: "ml" },
+            { tipoIngrediente: 'sal', nombre: "Sal y pimienta", cantidad: "a gusto", unidad: "" }
         ],
         minutos: 20,
         imagen: "imagenes/Sopa-Calabaza.jpg",
@@ -23,22 +21,22 @@ const recetas = [
             "Agregar la calabaza y el caldo caliente. Cocinar tapado a fuego medio hasta que la calabaza esté tierna (unos 12-15 min).",
             "Retirar del fuego y procesar con mixer o licuadora hasta lograr una textura homogénea.",
             "Incorporar la crema de leche, ajustar con sal y pimienta, y calentar 1 minuto más antes de servir."
-        ]
+        ],
+        tipoPlato: "Entrada"
     },
     {
         id: "sandwich-milanesa",
         nombre: "Sándwich de milanesa",
         descripcion: "El clásico de fin de semana, a puro pan y milanesa.",
         categoria: "Sándwiches",
-        tipoPlato: "principal",
         teoria: "sandwich",
         destacada: true,
         ingredientes: [
-            { nombre: "Milanesa de carne cocida", cantidad: 1, unidad: "unidad" },
-            { nombre: "Pan francés o baguette", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Tomate", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Hojas de lechuga", cantidad: 2, unidad: "hojas" },
-            { nombre: "Mayonesa", cantidad: 1, unidad: "cucharada" }
+            { tipoIngrediente: 'milanesa', nombre: "Milanesa de carne cocida", cantidad: 1, unidad: "unidad" },
+            { tipoIngrediente: 'pan', nombre: "Pan francés o baguette", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'tomate', nombre: "Tomate", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'lechuga', nombre: "Hojas de lechuga", cantidad: 2, unidad: "hojas" },
+            { tipoIngrediente: 'mayonesa', nombre: "Mayonesa", cantidad: 1, unidad: "cucharada" }
         ],
         minutos: 15,
         imagen: "imagenes/Sandwitc-Milanesa.jpg",
@@ -47,23 +45,22 @@ const recetas = [
             "Untar ambas caras de la miga con mayonesa.",
             "Lavar bien la lechuga y cortar el tomate en rodajas finas.",
             "Acomodar la milanesa tibia en la base, disponer encima el tomate y la lechuga, y cerrar el sándwich presionando ligeramente."
-        ]
+        ],
+        tipoPlato: "Principal"
     },
     {
         id: "ensalada-cesar",
         nombre: "Ensalada César",
         descripcion: "Fresca, liviana y lista en menos de 15 minutos.",
         categoria: "Ensaladas",
-        tipoPlato: "entrada",
         teoria: "ensalada",
         destacada: true,
-
         ingredientes: [
-            { nombre: "Lechuga romana", cantidad: 0.25, unidad: "planta" },
-            { nombre: "Pechuga de pollo a la plancha", cantidad: 100, unidad: "g" },
-            { nombre: "Crutones de pan", cantidad: 25, unidad: "g" },
-            { nombre: "Queso parmesano rallado", cantidad: 20, unidad: "g" },
-            { nombre: "Aderezo César", cantidad: 1.5, unidad: "cucharadas" }
+            { tipoIngrediente: 'lechuga', nombre: "Lechuga romana", cantidad: 0.25, unidad: "planta" },
+            { tipoIngrediente: 'pollo', nombre: "Pechuga de pollo a la plancha", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'crutones', nombre: "Crutones de pan", cantidad: 25, unidad: "g" },
+            { tipoIngrediente: 'queso', nombre: "Queso parmesano rallado", cantidad: 20, unidad: "g" },
+            { tipoIngrediente: 'aderezo', nombre: "Aderezo César", cantidad: 1.5, unidad: "cucharadas" }
         ],
         minutos: 15,
         imagen: "imagenes/Ensalada-Cesar.jpg",
@@ -72,24 +69,24 @@ const recetas = [
             "Cortar el pollo ya cocido a la plancha en tiras o cubos.",
             "En un bol individual, disponer la lechuga como base, sumar el pollo y los crutones crocantes.",
             "Bañar con el aderezo César y coronar con las escamas o ralladura de queso parmesano."
-        ]
+        ],
+        tipoPlato: "Entrada"
     },
     {
         id: "guiso-lentejas",
         nombre: "Guiso de lentejas",
         descripcion: "Casero y abundante, de esos que se cocinan a fuego lento.",
         categoria: "Guisos",
-        tipoPlato: "principal",
         teoria: "sopa",
         destacada: false,
         ingredientes: [
-            { nombre: "Lentejas hidratadas", cantidad: 100, unidad: "g" },
-            { nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Roast beef o panceta", cantidad: 60, unidad: "g" },
-            { nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Papa", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Puré de tomate", cantidad: 75, unidad: "ml" },
-            { nombre: "Caldo de carne", cantidad: 200, unidad: "ml" }
+            { tipoIngrediente: 'lentejas', nombre: "Lentejas hidratadas", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'chorizo', nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'carne', nombre: "Roast beef o panceta", cantidad: 60, unidad: "g" },
+            { tipoIngrediente: 'cebolla', nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'papa', nombre: "Papa", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'pure', nombre: "Puré de tomate", cantidad: 75, unidad: "ml" },
+            { tipoIngrediente: 'caldo', nombre: "Caldo de carne", cantidad: 200, unidad: "ml" }
         ],
         minutos: 60,
         imagen: "imagenes/Guiso-Lentejas.jpg",
@@ -100,24 +97,26 @@ const recetas = [
             "Agregar el puré de tomate, las lentejas bien enjuagadas y el caldo de carne.",
             "Tapar y cocinar a fuego bajo durante 30 minutos.",
             "Incorporar la papa cortada en cubos y continuar la cocción unos 15 minutos más hasta que la papa esté blanda y el caldo haya espesado."
-        ]
+        ],
+        tipoPlato: "Principal"
     },
     {
+
         id: "torta-chocolate",
         nombre: "Torta de chocolate",
         descripcion: "Bizcochuelo húmedo con relleno y cobertura de chocolate.",
         categoria: "Postres",
-        tipoPlato: "postre",
+        
         teoria: "sandwich",
         destacada: false,
         ingredientes: [
-            { nombre: "Harina 0000", cantidad: 60, unidad: "g" },
-            { nombre: "Cacao amargo en polvo", cantidad: 20, unidad: "g" },
-            { nombre: "Azúcar", cantidad: 50, unidad: "g" },
-            { nombre: "Huevo", cantidad: 1, unidad: "unidad" },
-            { nombre: "Leche", cantidad: 40, unidad: "ml" },
-            { nombre: "Aceite neutro", cantidad: 25, unidad: "ml" },
-            { nombre: "Dulce de leche o ganache para rellenar", cantidad: 75, unidad: "g" }
+            { tipoIngrediente: 'harina', nombre: "Harina 0000", cantidad: 60, unidad: "g" },
+            { tipoIngrediente: 'cacao', nombre: "Cacao amargo en polvo", cantidad: 20, unidad: "g" },
+            { tipoIngrediente: 'azucar', nombre: "Azúcar", cantidad: 50, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo", cantidad: 1, unidad: "unidad" },
+            { tipoIngrediente: 'leche', nombre: "Leche", cantidad: 40, unidad: "ml" },
+            { tipoIngrediente: 'aceite', nombre: "Aceite neutro", cantidad: 25, unidad: "ml" },
+            { tipoIngrediente: 'relleno', nombre: "Dulce de leche o ganache para rellenar", cantidad: 75, unidad: "g" }
         ],
         minutos: 45,
         imagen: "imagenes/Torta-Chocolate.jpg",
@@ -128,52 +127,56 @@ const recetas = [
             "Tamizar la harina junto con el cacao e incorporarlos con movimientos envolventes para no bajar el batido.",
             "Volcar la mezcla en el molde y hornear durante 25 a 30 minutos (verificar pinchando con un palillo).",
             "Dejar enfriar bien, desmoldar, cortar al medio y rellenar/cubrir con el dulce de leche o ganache."
-        ]
+        ],
+        tipoPlato: "Postre"
     },
     {
+
         id: "chipa",
         nombre: "Chipa",
         descripcion: "Pancitos de queso y almidón de mandioca, típicos del litoral.",
         categoria: "Panadería",
-        tipoPlato: "entrada",
+        
         teoria: "sandwich",
         destacada: false,
-
         ingredientes: [
-            { nombre: "Fécula de mandioca", cantidad: 125, unidad: "g" },
-            { nombre: "Queso de cáscara colorada", cantidad: 50, unidad: "g" },
-            { nombre: "Queso tipo sardo picado", cantidad: 40, unidad: "g" },
-            { nombre: "Manteca pomada", cantidad: 25, unidad: "g" },
-            { nombre: "Huevo", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Leche", cantidad: 25, unidad: "ml" },
-            { nombre: "Polvo de hornear", cantidad: 0.25, unidad: "cucharadita" }
+            { tipoIngrediente: 'mandioca', nombre: "Fécula de mandioca", cantidad: 125, unidad: "g" },
+            { tipoIngrediente: 'queso', nombre: "Queso de cáscara colorada", cantidad: 50, unidad: "g" },
+            { tipoIngrediente: 'queso', nombre: "Queso tipo sardo picado", cantidad: 40, unidad: "g" },
+            { tipoIngrediente: 'manteca', nombre: "Manteca pomada", cantidad: 25, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'leche', nombre: "Leche", cantidad: 25, unidad: "ml" },
+            { tipoIngrediente: 'polvo', nombre: "Polvo de hornear", cantidad: 0.25, unidad: "cucharadita" }
         ],
         minutos: 30,
-        imagen: "imagenes/Chipa.jpg",
+        imagen: "imagenes/chipa.png",
         pasos: [
             "En un bol, integrar la fécula de mandioca, los quesos rallados/picados y el polvo de hornear.",
             "Hacer un hueco en el centro y colocar la manteca blanda, el medio huevo batido y un chorrito de leche.",
             "Unir los ingredientes con las manos agregando leche de a poco hasta formar una masa suave que no se pegue.",
             "Formar bollitos del tamaño de una nuez y disponerlos en una placa para horno sin amontonar.",
             "Llevar a horno bien caliente (200°C) durante 15 minutos hasta que estén levemente dorados por fuera."
-        ]
+        ],
+        tipoPlato: "Entrada"
     },
     {
+
         id: "pollo-papas",
         nombre: "Pollo al horno con papas",
         descripcion: "Dorado y jugoso, con papas al horno como acompañamiento.",
         categoria: "Platos principales",
-        tipoPlato: "principal",
+        
         teoria: "ensalada",
         destacada: false,
 
+
         ingredientes: [
-            { nombre: "Presa de pollo (pata/muslo o pechuga)", cantidad: 1, unidad: "unidad (apx 350g)" },
-            { nombre: "Papas grandes", cantidad: 1, unidad: "unidad" },
-            { nombre: "Limón", cantidad: 0.25, unidad: "unidad" },
-            { nombre: "Aceite de oliva", cantidad: 1, unidad: "cucharada" },
-            { nombre: "Romero y tomillo", cantidad: "a gusto", unidad: "" },
-            { nombre: "Ajo picado", cantidad: 0.5, unidad: "diente" }
+            { tipoIngrediente: 'pollo', nombre: "Presa de pollo (pata/muslo o pechuga)", cantidad: 1, unidad: "unidad (apx 350g)" },
+            { tipoIngrediente: 'papas', nombre: "Papas grandes", cantidad: 1, unidad: "unidad" },
+            { tipoIngrediente: 'limon', nombre: "Limón", cantidad: 0.25, unidad: "unidad" },
+            { tipoIngrediente: 'aceite', nombre: "Aceite de oliva", cantidad: 1, unidad: "cucharada" },
+            { tipoIngrediente: 'condimentos', nombre: "Romero y tomillo", cantidad: "a gusto", unidad: "" },
+            { tipoIngrediente: 'ajo', nombre: "Ajo picado", cantidad: 0.5, unidad: "diente" }
         ],
         minutos: 60,
         imagen: "imagenes/Pollo-Papas.png",
@@ -183,20 +186,23 @@ const recetas = [
             "Condimentar todo con el ajo picado, romero, tomillo, sal, pimienta y el jugo de limón.",
             "Rociar generosamente con aceite de oliva.",
             "Hornear a 200°C por 45-50 minutos, dando vuelta la presa de pollo a mitad de cocción para que se dore de ambos lados."
-        ]
+        ],
+        tipoPlato: "Principal"
     },
     {
+
         id: "bife-chorizo",
         nombre: "Bife de chorizo a la parrilla",
         descripcion: "Un corte clásico, a punto, con su costrita por fuera.",
         categoria: "Parrilla",
-        tipoPlato: "principal",
+        
         teoria: "ensalada",
         destacada: false,
+
         ingredientes: [
-            { nombre: "Bife de chorizo de 3cm de grosor", cantidad: 250, unidad: "g" },
-            { nombre: "Sal gruesa o parrillera", cantidad: "a gusto", unidad: "" },
-            { nombre: "Pimienta negra recién molida", cantidad: "a gusto", unidad: "" }
+            { tipoIngrediente: 'chorizo', nombre: "Bife de chorizo de 3cm de grosor", cantidad: 250, unidad: "g" },
+            { tipoIngrediente: 'condimentos', nombre: "Sal gruesa o parrillera", cantidad: "a gusto", unidad: "" },
+            { tipoIngrediente: 'pimienta', nombre: "Pimienta negra recién molida", cantidad: "a gusto", unidad: "" }
         ],
         minutos: 25,
         imagen: "imagenes/Bife-Chorizo.jpg",
@@ -206,22 +212,25 @@ const recetas = [
             "Cocinar durante 12 a 15 minutos sin moverlo hasta que empiecen a asomar gotitas de jugo en la superficie.",
             "Dar vuelta con pinza (sin pinchar) y cocinar por 8 a 10 minutos más para lograr un punto medio.",
             "Dejar reposar 2 minutos sobre una tabla antes de cortar para que se redistribuyan los jugos."
-        ]
+        ],
+        tipoPlato: "Principal"
     },
     {
+
         id: "provoleta",
         nombre: "Provoleta",
         descripcion: "Queso derretido a la parrilla, con orégano y aceite de oliva.",
         categoria: "Entradas",
-        tipoPlato: "entrada",
+       
         teoria: "sopa",
         destacada: false,
+
         ingredientes: [
-            { nombre: "Queso provolone para parrilla", cantidad: 1, unidad: "rodaja (100g)" },
-            { nombre: "Orégano seco", cantidad: 0.5, unidad: "cucharadita" },
-            { nombre: "Ají molido", cantidad: 0.25, unidad: "cucharadita" },
-            { nombre: "Aceite de oliva", cantidad: 0.5, unidad: "cucharada" },
-            { nombre: "Harina (para rebozar suavemente)", cantidad: 0.5, unidad: "cucharada" }
+            { tipoIngrediente: 'queso', nombre: "Queso provolone para parrilla", cantidad: 1, unidad: "rodaja (100g)" },
+            { tipoIngrediente: 'condimentos', nombre: "Orégano seco", cantidad: 0.5, unidad: "cucharadita" },
+            { tipoIngrediente: 'ajo', nombre: "Ají molido", cantidad: 0.25, unidad: "cucharadita" },
+            { tipoIngrediente: 'aceite', nombre: "Aceite de oliva", cantidad: 0.5, unidad: "cucharada" },
+            { tipoIngrediente: 'harina', nombre: "Harina (para rebozar suavemente)", cantidad: 0.5, unidad: "cucharada" }
         ],
         minutos: 10,
         imagen: "imagenes/Provoleta.jpg",
@@ -229,23 +238,26 @@ const recetas = [
             "Pasar la rodaja de provolone por harina por ambas caras sacudiendo el exceso (ayuda a crear la costra crocante).",
             "Colocar directamente sobre la parrilla bien caliente o provoletera de hierro.",
             "Cocinar unos 4-5 minutos hasta que la base esté dorada y crujiente, dar vuelta con espátula, condimentar con orégano, ají molido y aceite de oliva, y cocinar 3 minutos más."
-        ]
+        ],
+        tipoPlato: "Entrada"
     },
     {
+
         id: "empanadas-carne",
         nombre: "Empanadas de carne",
         descripcion: "Repulgo casero, jugosas por dentro y doradas por fuera.",
         categoria: "Empanadas",
-        tipoPlato: "entrada",
+        
         teoria: "sandwich",
         destacada: false,
+
         ingredientes: [
-            { nombre: "Tapas de empanada", cantidad: 2, unidad: "unidades" },
-            { nombre: "Carne picada o cortada a cuchillo", cantidad: 100, unidad: "g" },
-            { nombre: "Cebolla", cantidad: 100, unidad: "g" },
-            { nombre: "Huevo duro picado", cantidad: 0.3, unidad: "unidad" },
-            { nombre: "Aceitunas verdes picadas", cantidad: 10, unidad: "g" },
-            { nombre: "Comino y pimentón dulce", cantidad: "a gusto", unidad: "" }
+            { tipoIngrediente: 'tapa', nombre: "Tapas de empanada", cantidad: 2, unidad: "unidades" },
+            { tipoIngrediente: 'carne', nombre: "Carne picada o cortada a cuchillo", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'cebolla', nombre: "Cebolla", cantidad: 100, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo duro picado", cantidad: 0.3, unidad: "unidad" },
+            { tipoIngrediente: 'aceitunas', nombre: "Aceitunas verdes picadas", cantidad: 10, unidad: "g" },
+            { tipoIngrediente: 'condimentos', nombre: "Comino y pimentón dulce", cantidad: "a gusto", unidad: "" }
         ],
         minutos: 40,
         imagen: "imagenes/Empanadas.jpg",
@@ -256,23 +268,26 @@ const recetas = [
             "Mezclar con el huevo duro y las aceitunas picadas.",
             "Repartir el relleno en las 2 tapas, humedecer los bordes, cerrar bien y hacer el repulgo.",
             "Pincelar con huevo batido y hornear a 220°C (horno bien fuerte) durante 12-15 minutos hasta dorar."
-        ]
+        ],
+        tipoPlato: "Entrada"
     },
     {
+
         id: "locro",
         nombre: "Locro",
         descripcion: "Maíz, zapallo y carne, cocidos a fuego lento por horas.",
         categoria: "Platos tradicionales",
-        tipoPlato: "principal",
+        
         teoria: "sopa",
         destacada: false,
+
         ingredientes: [
-            { nombre: "Maíz blanco partido (remojado)", cantidad: 75, unidad: "g" },
-            { nombre: "Porotos alubia (remojados)", cantidad: 50, unidad: "g" },
-            { nombre: "Zapallo plomo / cabutia", cantidad: 125, unidad: "g" },
-            { nombre: "Panceta salada", cantidad: 40, unidad: "g" },
-            { nombre: "Faldata o pechito de cerdo", cantidad: 80, unidad: "g" },
-            { nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" }
+            { tipoIngrediente: 'maiz', nombre: "Maíz blanco partido (remojado)", cantidad: 75, unidad: "g" },
+            { tipoIngrediente: 'porotos', nombre: "Porotos alubia (remojados)", cantidad: 50, unidad: "g" },
+            { tipoIngrediente: 'zapallo', nombre: "Zapallo plomo / cabutia", cantidad: 125, unidad: "g" },
+            { tipoIngrediente: 'carnes', nombre: "Panceta salada", cantidad: 40, unidad: "g" },
+            { tipoIngrediente: 'carne', nombre: "Faldata o pechito de cerdo", cantidad: 80, unidad: "g" },
+            { tipoIngrediente: 'chorizo', nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" }
         ],
         minutos: 180,
         imagen: "imagenes/Locro.png",
@@ -284,23 +299,26 @@ const recetas = [
             "Agregar el zapallo cortado en cubos chicos; a medida que avance la cocción se irá deshaciendo y le dará espesor al caldo.",
             "Cocinar a fuego muy bajo revolviendo frecuentemente con cuchara de madera durante 2 a 3 horas hasta lograr un guiso cremoso y espeso.",
             "Servir muy caliente con salsita picante (quiquirimichi) opcional por encima."
-        ]
+        ],
+        tipoPlato: "Principal"
     },
     {
+
         id: "milanesas-pure",
         nombre: "Milanesas con puré",
         descripcion: "El combo de toda la vida, crocante y cremoso.",
         categoria: "Platos principales",
-        tipoPlato: "principal",
+       
         teoria: "ensalada",
         destacada: false,
+
         ingredientes: [
-            { nombre: "Nalga o bola de lomo para milanesa", cantidad: 150, unidad: "g" },
-            { nombre: "Huevo batido con provenzal", cantidad: 0.5, unidad: "unidad" },
-            { nombre: "Pan rallado", cantidad: 75, unidad: "g" },
-            { nombre: "Papas para el puré", cantidad: 250, unidad: "g" },
-            { nombre: "Leche entera", cantidad: 30, unidad: "ml" },
-            { nombre: "Manteca", cantidad: 10, unidad: "g" }
+            { tipoIngrediente: 'carne', nombre: "Nalga o bola de lomo para milanesa", cantidad: 150, unidad: "g" },
+            { tipoIngrediente: 'huevo', nombre: "Huevo batido con provenzal", cantidad: 0.5, unidad: "unidad" },
+            { tipoIngrediente: 'pan', nombre: "Pan rallado", cantidad: 75, unidad: "g" },
+            { tipoIngrediente: 'papas', nombre: "Papas para el puré", cantidad: 250, unidad: "g" },
+            { tipoIngrediente: 'leche', nombre: "Leche entera", cantidad: 30, unidad: "ml" },
+            { tipoIngrediente: 'manteca', nombre: "Manteca", cantidad: 10, unidad: "g" }
         ],
         minutos: 35,
         imagen: "imagenes/Milanesas-Pure.png",
@@ -310,9 +328,247 @@ const recetas = [
             "Freír la milanesa en abundante aceite caliente (o hornear a fuego fuerte) hasta que esté dorada de ambos lados.",
             "Colar las papas calientes, pisarlas inmediatamente e incorporar la manteca y la leche tibia hasta lograr un puré cremoso.",
             "Servir la milanesa crocante acompañada por la porción de puré salpimentado a gusto."
-        ]
+        ],
+        tipoPlato: "Principal"
     }
 ];
+
+/**
+ * Mostrar la receta en la pagina calcular-receta
+ * @method mostrarReceta
+ */
+mostrarReceta = () => {
+    let contenidoPasos = "";
+    // 1. Obtener toda la cadena de parámetros de la URL actual
+    const queryString = window.location.search;
+
+    // 2. Crear una instancia de URLSearchParams para manipularlo fácilmente
+    const urlParams = new URLSearchParams(queryString);
+
+    // 3. Obtener el valor asociándolo a la clave del parámetro
+    const idReceta = urlParams.get('receta');
+
+    let infoReceta = recetas.find(receta => receta.id === idReceta);
+
+    if(infoReceta == null){
+        document.getElementById('img-receta').innerHTML = `<img src="imagenes/pregunta.png" alt="signo de pregunta" id="imagen-pregunta">`;
+
+        document.getElementById('categoria-receta').innerText = "Sin categoria";
+
+        document.getElementById('nombre-plato').innerText = "Sin plato";
+
+        document.getElementById('descripcion-receta').innerText = "Sin descripción";
+
+        document.getElementById('tiempo').innerText = "No hay minutos";
+    }else{
+        document.getElementById('img-receta').innerHTML = `<img src="${infoReceta.imagen}" alt="${infoReceta.nombre}" id="imagen-${infoReceta.id}">`;
+
+        document.getElementById('categoria-receta').innerText = infoReceta.categoria;
+
+        document.getElementById('nombre-plato').innerText = infoReceta.nombre;
+
+        document.getElementById('descripcion-receta').innerText = infoReceta.descripcion;
+
+        document.getElementById('tiempo').innerText = `${infoReceta.minutos} minutos`;
+
+        mostrarIngredientes(infoReceta.ingredientes);
+        
+        infoReceta.pasos.forEach((paso, num) => {
+            contenidoPasos += `
+                            <li aria-label="paso ${num} ${infoReceta.pasos[num]}}">
+                                ${infoReceta.pasos[num]}
+                            </li>
+                            ` 
+        });
+
+        document.getElementById('pasos').innerHTML = contenidoPasos;
+    }
+}
+
+/**
+ * Redirigir a la pagina de calcular receta
+ * @method verReceta
+ * @param idReceta - nombre de la receta
+ */
+verReceta = (idReceta) => {
+    window.location.href = `calcular_receta.html?receta=${idReceta}`;
+}
+
+/**
+ * Mostrar la cantidad de porciones que se estan calculando
+ * @method cantidadPorciones
+ */
+cantidadPorciones = () =>{
+    document.getElementById('cantidad').innerText = document.getElementById('input-porciones').value;
+}
+
+/**
+ * Mostrar los ingredientes teniendo en cuenta la cantidad de porciones que ingresa el usuario
+ * @method mostrarIngredientes
+ * @param listIngredientes - lista de los ingredientes de una receta
+ */
+mostrarIngredientes = (listIngredientes) => {
+    let contenido = "";
+    let cantidad = document.getElementById('input-porciones').value;
+    listIngredientes.forEach((ingr, num) => {
+        let total = Math.round(cantidad * parseFloat(listIngredientes[num].cantidad) * 100) / 100;
+        
+        if(isNaN(total)){
+            total = "a gusto"
+        };
+
+        contenido += 
+                            `
+                            <li aria-label="ingrediente ${listIngredientes[num].nombre}">
+                                <label>
+                                    <input type="checkbox" id="ingrediente-${num}">
+                                    <span id="cantidad-ingrediente">${total} ${listIngredientes[num].unidad}</span>
+                                    <span id="nombre-ingrediente"> ${listIngredientes[num].nombre}</span>
+                                </label>
+                            </li>
+                            `
+        });
+
+    document.getElementById('ingredientes').innerHTML = contenido;
+}
+
+/**
+ * Mostrar otras recetas cortas de forma aleatoria
+ * @method recetasCortas
+ */
+recetasCortas = () => {
+    let contenido = "";
+    const numerosUnicos = new Set();
+
+    while (numerosUnicos.size < 3) {
+        
+        const numero = Math.floor(Math.random() * 12) + 1;
+        numerosUnicos.add(numero);
+    }
+
+    const arrayTemp = Array.from(numerosUnicos);
+
+    const [num1,num2,num3] = arrayTemp;
+
+    let listaRecetas = [recetas.at(num1), recetas.at(num2), recetas.at(num3)];
+
+    listaRecetas.forEach((list, num) => {
+        contenido += `
+                    <article class="receta-corta">
+                        <div class="contenedor-imagen">
+                            <img src="${listaRecetas[num].imagen}" alt="${listaRecetas[num].nombre}" id="imagen-corta-${listaRecetas[num].id}">
+                        </div>
+                        <h3>
+                            ${listaRecetas[num].nombre}
+                        </h3>
+                        <p>
+                            ${listaRecetas[num].minutos} minutos
+                        </p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('${listaRecetas[num].id}')">
+                        Ver receta</button>
+                    </article>
+                    `
+    });
+
+    document.getElementById('recetas-cortas').innerHTML = contenido;
+}
+
+/**
+ * Mostrar todas las recetas
+ * @method mostrarTodasRecetas
+ * @param recetalist - lista de recetas, por defecto todas las recetas
+ */
+mostrarTodasRecetas = (recetalist = recetas) => {
+    let contenido = "";
+
+    recetalist.forEach((receta) => {
+        contenido += `
+                    <article class="tarjeta-receta" id="receta-${receta.idReceta}" data-categoria="${receta.categoria.toLowerCase()}"
+                        data-tiempo="${receta.minutos} minutos" data-teoria="${receta.tipoPlato.toLowerCase()}">
+                        <!--IMAGEN-->
+                        <h3>
+                            ${receta.nombre}
+                        </h3>
+                        <p>
+                            ${receta.descripcion}
+                        </p>
+                        <button type="button" class="boton-ver-receta" onclick="verReceta('${receta.id}')">
+                            Ver receta
+                        </button>
+                    </article>
+                    `
+    }); 
+
+    document.getElementById('grilla-recetas').innerHTML = contenido;
+}
+
+/**
+ * Filtra las recetas por valores ingresados por el usuario(categoria, tiempo, teoria, ingredientes)
+ * @method aplicarFiltros
+ */
+aplicarFiltros = () => {
+    let newRecetas = recetas;
+    let categoria = document.getElementById('select-categoria').value;
+    let tiempo = document.getElementById('select-tiempo').value;
+    let teoria = document.getElementById('select-tipo-plato').value;
+    let papa = document.getElementById('check-ing-papa').checked;
+    let tomate = document.getElementById('check-ing-tomate').checked;
+    let queso = document.getElementById('check-ing-queso').checked;
+    let lechuga = document.getElementById('check-ing-lechuga').checked;
+    let carne = document.getElementById('check-ing-carne').checked;
+    let huevo = document.getElementById('check-ing-huevo').checked;
+    let cebolla = document.getElementById('check-ing-cebolla').checked;
+    let harina = document.getElementById('check-ing-harina').checked;
+
+    if(categoria !== "todas"){
+        newRecetas = newRecetas.filter(receta => receta.tipoPlato.toLowerCase() === categoria.toLowerCase());
+    }
+
+    if(tiempo !== "todos"){
+        newRecetas = newRecetas.filter((receta) => {
+            switch(tiempo){
+                case "rapido":
+                    newRecetas = receta.minutos <= 30;
+                    break;
+                case "medio":
+                    newRecetas = receta.minutos > 30 && receta.minutos <= 60;
+                    break;
+                case "largo":
+                    newRecetas = receta.minutos > 60;
+                    break;
+                default:
+                    newRecetas = recetas;
+                    break;
+            }
+        });
+    }
+    
+    if(teoria !== "todas"){
+        newRecetas = newRecetas.filter((receta) => receta.categoria.toLowerCase() === teoria.toLowerCase());
+    }
+    
+    let ingredientesArray = [];
+    papa ? ingredientesArray.push("papa") : "";
+    tomate ? ingredientesArray.push("tomate") : "";
+    queso ? ingredientesArray.push("queso") : "";
+    lechuga ? ingredientesArray.push("lechuga") : "";
+    carne ? ingredientesArray.push("carne") : "";
+    huevo ? ingredientesArray.push("huevo") : "";
+    cebolla ? ingredientesArray.push("cebolla") : "";
+    harina ? ingredientesArray.push("harina") : "";
+
+    if(ingredientesArray.length > 0){
+    newRecetas = newRecetas.filter((receta) => {
+        return receta.ingredientes.some((ingrediente) => {
+            return ingredientesArray.includes(ingrediente.tipoIngrediente.toLowerCase());
+        });
+    });
+}
+
+mostrarTodasRecetas(newRecetas);
+}
+
+
 let posicionCarrusel = 0;
 
 /**
@@ -416,18 +672,6 @@ const moverCarrusel = direccion => {
 };
 
 
-/**
- * Mueve el carrusel de recetas destacadas
- * @method verReceta
- * @param {string} id - id de la receta que se desea visualizar 
- */
-
-const verReceta = id => {
-    const receta = recetas.find(
-        receta => receta.id === id
-    );
-    if (receta){}
-};
 
 /**
  * filtra recetas por palabra
@@ -440,12 +684,4 @@ const filtrarReceta = () => {
     window.location.href = "recetas.html";
 };
 
-/**
- * Elimina los filtros aplicados y muestra todas las recetas
- * @method limpiarFiltros
- */
 
-const limpiarFiltros = () => {
-    localStorage.removeItem("searchWord");
-    mostrarRecetas(recetas,"grilla-recetas");
-};
