@@ -1,8 +1,13 @@
 const recetas = [
     {
+        id: "sopa-calabaza",
         nombre: "Sopa de calabaza",
         descripcion: "Cremosa, rápida y perfecta para el invierno.",
         categoria: "Sopas",
+        tipoPlato: "entrada",
+        teoria: "sopa",
+        destacada: true,
+
         ingredientes: [
             { nombre: "Calabaza", cantidad: 150, unidad: "g" },
             { nombre: "Cebolla", cantidad: 0.25, unidad: "unidad" },
@@ -21,9 +26,13 @@ const recetas = [
         ]
     },
     {
+        id: "sandwich-milanesa",
         nombre: "Sándwich de milanesa",
         descripcion: "El clásico de fin de semana, a puro pan y milanesa.",
         categoria: "Sándwiches",
+        tipoPlato: "principal",
+        teoria: "sandwich",
+        destacada: true,
         ingredientes: [
             { nombre: "Milanesa de carne cocida", cantidad: 1, unidad: "unidad" },
             { nombre: "Pan francés o baguette", cantidad: 0.5, unidad: "unidad" },
@@ -41,9 +50,14 @@ const recetas = [
         ]
     },
     {
+        id: "ensalada-cesar",
         nombre: "Ensalada César",
         descripcion: "Fresca, liviana y lista en menos de 15 minutos.",
         categoria: "Ensaladas",
+        tipoPlato: "entrada",
+        teoria: "ensalada",
+        destacada: true,
+
         ingredientes: [
             { nombre: "Lechuga romana", cantidad: 0.25, unidad: "planta" },
             { nombre: "Pechuga de pollo a la plancha", cantidad: 100, unidad: "g" },
@@ -61,9 +75,13 @@ const recetas = [
         ]
     },
     {
+        id: "guiso-lentejas",
         nombre: "Guiso de lentejas",
         descripcion: "Casero y abundante, de esos que se cocinan a fuego lento.",
         categoria: "Guisos",
+        tipoPlato: "principal",
+        teoria: "sopa",
+        destacada: false,
         ingredientes: [
             { nombre: "Lentejas hidratadas", cantidad: 100, unidad: "g" },
             { nombre: "Chorizo colorado", cantidad: 0.25, unidad: "unidad" },
@@ -85,9 +103,13 @@ const recetas = [
         ]
     },
     {
+        id: "torta-chocolate",
         nombre: "Torta de chocolate",
         descripcion: "Bizcochuelo húmedo con relleno y cobertura de chocolate.",
         categoria: "Postres",
+        tipoPlato: "postre",
+        teoria: "sandwich",
+        destacada: false,
         ingredientes: [
             { nombre: "Harina 0000", cantidad: 60, unidad: "g" },
             { nombre: "Cacao amargo en polvo", cantidad: 20, unidad: "g" },
@@ -109,9 +131,14 @@ const recetas = [
         ]
     },
     {
+        id: "chipa",
         nombre: "Chipa",
         descripcion: "Pancitos de queso y almidón de mandioca, típicos del litoral.",
         categoria: "Panadería",
+        tipoPlato: "entrada",
+        teoria: "sandwich",
+        destacada: false,
+
         ingredientes: [
             { nombre: "Fécula de mandioca", cantidad: 125, unidad: "g" },
             { nombre: "Queso de cáscara colorada", cantidad: 50, unidad: "g" },
@@ -132,9 +159,14 @@ const recetas = [
         ]
     },
     {
+        id: "pollo-papas",
         nombre: "Pollo al horno con papas",
         descripcion: "Dorado y jugoso, con papas al horno como acompañamiento.",
         categoria: "Platos principales",
+        tipoPlato: "principal",
+        teoria: "ensalada",
+        destacada: false,
+
         ingredientes: [
             { nombre: "Presa de pollo (pata/muslo o pechuga)", cantidad: 1, unidad: "unidad (apx 350g)" },
             { nombre: "Papas grandes", cantidad: 1, unidad: "unidad" },
@@ -154,9 +186,13 @@ const recetas = [
         ]
     },
     {
+        id: "bife-chorizo",
         nombre: "Bife de chorizo a la parrilla",
         descripcion: "Un corte clásico, a punto, con su costrita por fuera.",
         categoria: "Parrilla",
+        tipoPlato: "principal",
+        teoria: "ensalada",
+        destacada: false,
         ingredientes: [
             { nombre: "Bife de chorizo de 3cm de grosor", cantidad: 250, unidad: "g" },
             { nombre: "Sal gruesa o parrillera", cantidad: "a gusto", unidad: "" },
@@ -173,9 +209,13 @@ const recetas = [
         ]
     },
     {
+        id: "provoleta",
         nombre: "Provoleta",
         descripcion: "Queso derretido a la parrilla, con orégano y aceite de oliva.",
         categoria: "Entradas",
+        tipoPlato: "entrada",
+        teoria: "sopa",
+        destacada: false,
         ingredientes: [
             { nombre: "Queso provolone para parrilla", cantidad: 1, unidad: "rodaja (100g)" },
             { nombre: "Orégano seco", cantidad: 0.5, unidad: "cucharadita" },
@@ -192,9 +232,13 @@ const recetas = [
         ]
     },
     {
+        id: "empanadas-carne",
         nombre: "Empanadas de carne",
         descripcion: "Repulgo casero, jugosas por dentro y doradas por fuera.",
         categoria: "Empanadas",
+        tipoPlato: "entrada",
+        teoria: "sandwich",
+        destacada: false,
         ingredientes: [
             { nombre: "Tapas de empanada", cantidad: 2, unidad: "unidades" },
             { nombre: "Carne picada o cortada a cuchillo", cantidad: 100, unidad: "g" },
@@ -215,9 +259,13 @@ const recetas = [
         ]
     },
     {
+        id: "locro",
         nombre: "Locro",
         descripcion: "Maíz, zapallo y carne, cocidos a fuego lento por horas.",
         categoria: "Platos tradicionales",
+        tipoPlato: "principal",
+        teoria: "sopa",
+        destacada: false,
         ingredientes: [
             { nombre: "Maíz blanco partido (remojado)", cantidad: 75, unidad: "g" },
             { nombre: "Porotos alubia (remojados)", cantidad: 50, unidad: "g" },
@@ -239,9 +287,13 @@ const recetas = [
         ]
     },
     {
+        id: "milanesas-pure",
         nombre: "Milanesas con puré",
         descripcion: "El combo de toda la vida, crocante y cremoso.",
         categoria: "Platos principales",
+        tipoPlato: "principal",
+        teoria: "ensalada",
+        destacada: false,
         ingredientes: [
             { nombre: "Nalga o bola de lomo para milanesa", cantidad: 150, unidad: "g" },
             { nombre: "Huevo batido con provenzal", cantidad: 0.5, unidad: "unidad" },
