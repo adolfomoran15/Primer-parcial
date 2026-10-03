@@ -520,3 +520,11 @@ aplicarFiltros = () => {
 
     mostrarTodasRecetas(newRecetas);
 }
+
+/**
+ * Remueve todos los filtros
+ * @method limpiarFiltros()
+ */
+limpiarFiltros = () => {
+    mostrarTodasRecetas();
+}
