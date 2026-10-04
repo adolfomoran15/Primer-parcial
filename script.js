@@ -596,8 +596,7 @@ const cargarRecetas = () => {
 
         mostrarRecetas(nuevaLista, "grilla-recetas");
     }
-};
-cargarRecetas(); 
+}; 
 
 /**
  * Carga las recetas destacadas en el carrusel
@@ -614,7 +613,6 @@ const CargarDestacadas = () => {
         mostrarRecetas(recetasdestacadas,"lista-destacadas");
 }
 };
-CargarDestacadas();
 
 /**
  * Mueve el carrusel de recetas destacadas
