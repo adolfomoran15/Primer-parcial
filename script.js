@@ -335,9 +335,9 @@ const recetas = [
 
 /**
  * Mostrar la receta en la pagina calcular-receta
- * @method mostrarReceta
+ * @method mostrarRecetaIndividual
  */
-mostrarReceta = () => {
+const mostrarRecetaIndividual = () => {
     let contenidoPasos = "";
     // 1. Obtener toda la cadena de parámetros de la URL actual
     const queryString = window.location.search;
@@ -390,7 +390,7 @@ mostrarReceta = () => {
  * @method verReceta
  * @param idReceta - nombre de la receta
  */
-verReceta = (idReceta) => {
+const verReceta = (idReceta) => {
     window.location.href = `calcular_receta.html?receta=${idReceta}`;
 }
 
@@ -398,7 +398,7 @@ verReceta = (idReceta) => {
  * Mostrar la cantidad de porciones que se estan calculando
  * @method cantidadPorciones
  */
-cantidadPorciones = () =>{
+const cantidadPorciones = () =>{
     document.getElementById('cantidad').innerText = document.getElementById('input-porciones').value;
 }
 
@@ -407,7 +407,7 @@ cantidadPorciones = () =>{
  * @method mostrarIngredientes
  * @param listIngredientes - lista de los ingredientes de una receta
  */
-mostrarIngredientes = (listIngredientes) => {
+const mostrarIngredientes = (listIngredientes) => {
     let contenido = "";
     let cantidad = document.getElementById('input-porciones').value;
     listIngredientes.forEach((ingr, num) => {
@@ -436,7 +436,7 @@ mostrarIngredientes = (listIngredientes) => {
  * Mostrar otras recetas cortas de forma aleatoria
  * @method recetasCortas
  */
-recetasCortas = () => {
+const recetasCortas = () => {
     let contenido = "";
     const numerosUnicos = new Set();
 
@@ -478,7 +478,7 @@ recetasCortas = () => {
  * Filtra las recetas por valores ingresados por el usuario(categoria, tiempo, teoria, ingredientes)
  * @method aplicarFiltros
  */
-aplicarFiltros = () => {
+const aplicarFiltros = () => {
     let newRecetas = recetas;
     let categoria = document.getElementById('select-categoria').value;
     let tiempo = document.getElementById('select-tiempo').value;
@@ -497,27 +497,27 @@ aplicarFiltros = () => {
     }
 
     if(tiempo !== "todos"){
-    newRecetas = newRecetas.filter((receta) => {
-        switch(tiempo){
-            case "rapido":
-                return receta.minutos <= 30;
+        newRecetas = newRecetas.filter((receta) => {
+            switch(tiempo){
+                case "rapido":
+                    return receta.minutos <= 30;
 
-            case "medio":
-                return receta.minutos > 30 && receta.minutos <= 60;
+                case "medio":
+                    return receta.minutos > 30 && receta.minutos <= 60;
 
-            case "largo":
-                return receta.minutos > 60;
+                case "largo":
+                    return receta.minutos > 60;
 
-            default:
-                return true;
-        }
-    });
-}
+                default:
+                    return true;
+            }
+        });
+    }
     if(teoria !== "todas"){
-    newRecetas = newRecetas.filter(
-        receta => receta.teoria.toLowerCase() === teoria.toLowerCase()
-    );
-}
+        newRecetas = newRecetas.filter(
+            receta => receta.teoria.toLowerCase() === teoria.toLowerCase()
+        );
+    }
     
     let ingredientesArray = [];
     papa ? ingredientesArray.push("papa") : "";
@@ -530,13 +530,13 @@ aplicarFiltros = () => {
     harina ? ingredientesArray.push("harina") : "";
 
     if(ingredientesArray.length > 0){
-    newRecetas = newRecetas.filter((receta) => {
-        return receta.ingredientes.some((ingrediente) => {
-            return ingredientesArray.includes(ingrediente.tipoIngrediente.toLowerCase());
+        newRecetas = newRecetas.filter((receta) => {
+            return receta.ingredientes.some((ingrediente) => {
+                return ingredientesArray.includes(ingrediente.tipoIngrediente.toLowerCase());
+            });
         });
-    });
-}
-mostrarRecetas(newRecetas, "grilla-recetas");
+    }
+    mostrarRecetas(newRecetas, "grilla-recetas");
 }
 
 
@@ -549,30 +549,32 @@ let posicionCarrusel = 0;
  * @param {string} idContenedor - Id del contenedor donde se mostrarán las recetas
  */
 const mostrarRecetas = (lista,idContenedor) => {
-const contenedor = document.getElementById(idContenedor);
-contenedor.innerHTML = "";
-for(let i = 0; i < lista.length; i++){
-    const receta = lista[i];
-    contenedor.innerHTML += `<article class="tarjeta-receta">
+    const contenedor = document.getElementById(idContenedor);
+    contenedor.innerHTML = "";
+    for(let i = 0; i < lista.length; i++){
+        const receta = lista[i];
+        contenedor.innerHTML += 
+            `<article class="tarjeta-receta">
 
-                <img src="${receta.imagen}" alt="${receta.nombre}">
+            <img src="${receta.imagen}" alt="${receta.nombre}">
 
-                <h3>${receta.nombre}</h3>
+            <h3>${receta.nombre}</h3>
 
-                <p>${receta.descripcion}</p>
+            <p>${receta.descripcion}</p>
 
-                <button
-                    type="button"
-                    class="boton-ver-receta"
-                    onclick="verReceta('${receta.id}')">
+            <button
+                type="button"
+                class="boton-ver-receta"
+                onclick="verReceta('${receta.id}')">
 
-                    Ver receta
+                Ver receta
 
-                </button>
+            </button>
 
             </article>`;
-}
+    }
 };
+
 /**
  * Carga las recetas en el catalogo
  * @method cargarRecetas
@@ -642,13 +644,10 @@ const moverCarrusel = direccion => {
     lista.style.transform = `translateX(-${posicionCarrusel * desplazamiento}px)`;
 };
 
-
-
 /**
  * filtra recetas por palabra
  * @method filtrarReceta
  */
-
 const filtrarReceta = () => {
     let searchWord = document.getElementById("input-buscar-recetas").value;
 
