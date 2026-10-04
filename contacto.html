@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" 
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="script.js"></script>
     <title>Recetario web S.E.S</title>
 </head> <!-- link a CSS y Javascript  -->
 
@@ -41,16 +42,16 @@
             </p>
         </div>
         <div class="contenedor-form">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" maxlength="50" required>
+            <label for="input-nombre">Nombre:</label>
+            <input type="text" id="input-nombre" name="nombre" maxlength="50" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" maxlength="50" required>
+            <label for="input-email">Email:</label>
+            <input type="email" id="input-email" name="email" maxlength="50" required>
 
-            <label for="mensaje">Mensaje:</label>
-            <input type="text" id="mensaje" name="mensaje" maxlength="500" required>
+            <label for="input-mensaje">Mensaje:</label>
+            <input type="text" id="input-mensaje" name="mensaje" maxlength="500" required>
 
-            <button id="enviar" aria-label="Boton de enviar formulario">Enviar</button>
+            <button id="enviar" aria-label="Boton de enviar formulario" onclick="enviarFormularioContacto()">Enviar</button>
         </div>
 
         <hr class="separador">
@@ -82,7 +83,6 @@
 
     <div id="contenedor-footer">
         <footer id="footer-principal">
-            <!-- IMAGEN -->
             <nav id="nav-texto">
                 <h6>S.E.S. cocina</h6>
                 <p id="frase-footer">La cocina no discute teorías, las prueba.</p>
