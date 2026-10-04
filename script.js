@@ -688,3 +688,41 @@ const limpiarFiltros = () => {
 const volverRecetas = () => {
     window.location.href = "recetas.html";
 };
+
+/**
+ * Envía formulario de la pestaña de contacto
+ * @method enviarFormularioContacto
+ */
+const enviarFormularioContacto = () => {
+    const inputNombre = document.getElementById("input-nombre");
+    const inputCorreo = document.getElementById("input-email");
+    const inputMensaje = document.getElementById("input-mensaje");
+    
+    const nombre = inputNombre?.value?.trim() || "";
+    const correo = inputCorreo?.value?.trim() || "";
+    const mensaje = inputMensaje?.value?.trim() || "";
+
+    if (nombre === "") {
+        alert("Por favor, ingrese su nombre.");
+        inputNombre?.focus();
+        return;
+    }
+
+    if (correo === "") {
+        alert("Por favor, ingrese un correo electrónico válido.");
+        inputCorreo?.focus();
+        return;
+    }
+
+    if (mensaje === "") {
+        alert("Por favor, ingrese un mensaje.");
+        inputMensaje?.focus();
+        return;
+    }
+
+    alert("Mensaje enviado con éxito");
+
+    inputNombre.value = "";
+    inputCorreo.value = "";
+    inputMensaje.value = "";
+};
